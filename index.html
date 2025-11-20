@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Harsh Akshit - Cybersecurity Professional specializing in AI Safety, LLM Jailbreaking, and Vulnerability Management">
+    <meta name="keywords" content="AI Security, LLM Jailbreaking, Application Security, Cybersecurity, Prompt Injection, Cloud Security">
+    <meta name="author" content="Harsh Akshit">
+    <title>Harsh Akshit - AI Security Researcher</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --color-primary: #1d1d1f;
+            --color-secondary: #6e6e73;
+            --color-accent: #0071e3;
+            --color-bg: #ffffff;
+            --color-surface: #f5f5f7;
+            --spacing-xs: 8px;
+            --spacing-sm: 16px;
+            --spacing-md: 32px;
+            --spacing-lg: 64px;
+            --spacing-xl: 96px;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            color: var(--color-primary);
+            background-color: var(--color-bg);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: saturate(180%) blur(20px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px var(--spacing-md);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        nav .logo {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--color-primary);
+            text-decoration: none;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: var(--spacing-md);
+        }
+        
+        nav a {
+            color: var(--color-primary);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 400;
+            transition: color 0.3s ease;
+        }
+        
+        nav a:hover {
+            color: var(--color-accent);
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: var(--spacing-xl) var(--spacing-md);
+            background: linear-gradient(135deg, #f5f5f7 0%, #ffffff 100%);
+        }
+        
+        .hero-content {
+            max-width: 900px;
+        }
+        
+        .hero h1 {
+            font-size: clamp(48px, 8vw, 80px);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: var(--spacing-md);
+            letter-spacing: -0.02em;
+        }
+        
+        .hero p {
+            font-size: clamp(18px, 3vw, 24px);
+            color: var(--color-secondary);
+            margin-bottom: var(--spacing-lg);
+            font-weight: 400;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: var(--spacing-sm);
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 14px 28px;
+            border-radius: 980px;
+            font-size: 16px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .btn-primary {
+            background: var(--color-accent);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #0077ED;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 113, 227, 0.3);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--color-accent);
+            border: 2px solid var(--color-accent);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--color-accent);
+            color: white;
+        }
+        
+        /* Section */
+        section {
+            padding: var(--spacing-xl) 0;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .section-header h2 {
+            font-size: clamp(32px, 5vw, 48px);
+            font-weight: 700;
+            margin-bottom: var(--spacing-sm);
+            letter-spacing: -0.01em;
+        }
+        
+        .section-header p {
+            font-size: 18px;
+            color: var(--color-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Experience Cards */
+        .experience-grid {
+            display: grid;
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-lg);
+        }
+        
+        .experience-card {
+            background: var(--color-surface);
+            border-radius: 18px;
+            padding: var(--spacing-md);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .experience-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .experience-card h3 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .experience-card .meta {
+            color: var(--color-accent);
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .experience-card p {
+            color: var(--color-secondary);
+            line-height: 1.7;
+        }
+        
+        /* Research Grid */
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-lg);
+        }
+        
+        .research-card {
+            background: var(--color-bg);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 18px;
+            padding: var(--spacing-md);
+            transition: all 0.3s ease;
+        }
+        
+        .research-card:hover {
+            border-color: var(--color-accent);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+        }
+        
+        .research-card h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .research-card p {
+            color: var(--color-secondary);
+            font-size: 14px;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .research-card a {
+            color: var(--color-accent);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .research-card a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-lg);
+        }
+        
+        .skill-category h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: var(--spacing-sm);
+            color: var(--color-accent);
+        }
+        
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-xs);
+        }
+        
+        .skill-tag {
+            background: var(--color-surface);
+            padding: 8px 16px;
+            border-radius: 980px;
+            font-size: 14px;
+            color: var(--color-primary);
+        }
+        
+        /* Certifications */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-sm);
+            margin-top: var(--spacing-lg);
+        }
+        
+        .cert-item {
+            background: var(--color-surface);
+            padding: var(--spacing-sm);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+        
+        .cert-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--color-accent);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+        
+        .cert-item span {
+            font-size: 15px;
+            font-weight: 500;
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            background: var(--color-surface);
+            text-align: center;
+        }
+        
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-md);
+            flex-wrap: wrap;
+        }
+        
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            padding: 12px 24px;
+            background: white;
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--color-primary);
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--color-primary);
+            color: var(--color-surface);
+            text-align: center;
+            padding: var(--spacing-md);
+            font-size: 14px;
+        }
+        
+        footer a {
+            color: var(--color-surface);
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                gap: var(--spacing-sm);
+            }
+            
+            nav a {
+                font-size: 12px;
+            }
+            
+            .hero {
+                padding: var(--spacing-lg) var(--spacing-sm);
+            }
+            
+            .research-grid,
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Image Carousel */
+        .carousel-section {
+            background: var(--color-primary);
+            padding: var(--spacing-xl) 0;
+            overflow: hidden;
+        }
+        
+        .carousel-container {
+            position: relative;
+            max-width: 1400px;
+            margin: 0 auto;
+            height: 600px;
+        }
+        
+        .carousel-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            border-radius: 24px;
+        }
+        
+        .carousel-slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        
+        .carousel-slide.active {
+            opacity: 1;
+        }
+        
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+            background: var(--color-primary);
+        }
+        
+        .carousel-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            padding: var(--spacing-lg) var(--spacing-md);
+            color: white;
+        }
+        
+        .carousel-caption h3 {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .carousel-caption p {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .carousel-dots {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 12px;
+            z-index: 10;
+        }
+        
+        .carousel-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .carousel-dot.active {
+            background: white;
+            width: 24px;
+            border-radius: 4px;
+        }
+        
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border: none;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+        
+        .carousel-nav:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-50%) scale(1.1);
+        }
+        
+        .carousel-nav.prev {
+            left: 20px;
+        }
+        
+        .carousel-nav.next {
+            right: 20px;
+        }
+        
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        @media (max-width: 768px) {
+            .carousel-container {
+                height: 400px;
+            }
+            
+            .carousel-caption h3 {
+                font-size: 20px;
+            }
+            
+            .carousel-caption p {
+                font-size: 14px;
+            }
+            
+            .carousel-nav {
+                width: 40px;
+                height: 40px;
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="#" class="logo">Harsh Akshit</a>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Bridging AI and Security</h1>
+            <p>Cybersecurity professional specializing in AI Safety, LLM Jailbreaking, and Vulnerability Management</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">Get in Touch</a>
+                <a href="#research" class="btn btn-secondary">View Research</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>About Me</h2>
+                <p>Hacker mindset meets defensive strategy. Protecting 2M+ consumers while advancing the frontier of AI security research.</p>
+            </div>
+            <div class="experience-grid fade-in">
+                <div class="experience-card">
+                    <h3>Master's in Cybersecurity Risk Management</h3>
+                    <div class="meta">Indiana University Bloomington</div>
+                    <p>Advanced studies in cybersecurity, risk assessment, and security architecture. Focus on emerging threats in AI and cloud security.</p>
+                </div>
+                <div class="experience-card">
+                    <h3>Google Bughunter Hall of Fame</h3>
+                    <div class="meta">Recognition</div>
+                    <p>Recognized for discovering and responsibly disclosing critical security vulnerabilities in Google's infrastructure.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Image Carousel Section -->
+    <section class="carousel-section">
+        <div class="container">
+            <div class="section-header fade-in" style="color: white; margin-bottom: var(--spacing-lg);">
+                <h2>Conferences & Networking</h2>
+                <p style="color: rgba(255, 255, 255, 0.8);">Connecting with the cybersecurity community at events worldwide</p>
+            </div>
+            <div class="carousel-container fade-in">
+                <div class="carousel-wrapper">
+                    <div class="carousel-slide active">
+                        <img src="Images/IMG_2679.jpeg" alt="Conference Event">
+                        <div class="carousel-caption">
+                            <h3>Cybersecurity Conference</h3>
+                            <p>Networking with industry leaders and security professionals</p>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="Images/IMG_3650.jpeg" alt="Security Summit">
+                        <div class="carousel-caption">
+                            <h3>Security Summit</h3>
+                            <p>Sharing insights on emerging threats and defense strategies</p>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="Images/IMG_4095.jpeg" alt="Tech Conference">
+                        <div class="carousel-caption">
+                            <h3>Tech Conference</h3>
+                            <p>Exploring the latest in AI security and cloud technologies</p>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="Images/IMG_4118.jpeg" alt="Networking Event">
+                        <div class="carousel-caption">
+                            <h3>Industry Networking</h3>
+                            <p>Building connections across the security community</p>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="Images/IMG_4779.jpeg" alt="Security Workshop">
+                        <div class="carousel-caption">
+                            <h3>Security Workshop</h3>
+                            <p>Hands-on sessions with cutting-edge security tools</p>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="Images/IMG_4928.jpeg" alt="DEF CON">
+                        <div class="carousel-caption">
+                            <h3>DEF CON Experience</h3>
+                            <p>Volunteering and learning at the world's largest hacker conference</p>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="Images/IMG_5009.jpeg" alt="Professional Meetup">
+                        <div class="carousel-caption">
+                            <h3>Professional Meetup</h3>
+                            <p>Collaborating with peers on security challenges</p>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="Images/IMG_5346.jpeg" alt="Tech Summit">
+                        <div class="carousel-caption">
+                            <h3>Tech Summit</h3>
+                            <p>Presenting research findings to the community</p>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="Images/IMG_6213.jpeg" alt="Hacker Conference">
+                        <div class="carousel-caption">
+                            <h3>Hacker Conference</h3>
+                            <p>Engaging with the offensive security community</p>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="Images/IMG_6237.jpeg" alt="Cybersecurity Event">
+                        <div class="carousel-caption">
+                            <h3>Cybersecurity Event</h3>
+                            <p>Learning from industry experts and thought leaders</p>
+                        </div>
+                    </div>
+                    
+                    <button class="carousel-nav prev" onclick="moveSlide(-1)">‹</button>
+                    <button class="carousel-nav next" onclick="moveSlide(1)">›</button>
+                    
+                    <div class="carousel-dots">
+                        <span class="carousel-dot active" onclick="currentSlide(0)"></span>
+                        <span class="carousel-dot" onclick="currentSlide(1)"></span>
+                        <span class="carousel-dot" onclick="currentSlide(2)"></span>
+                        <span class="carousel-dot" onclick="currentSlide(3)"></span>
+                        <span class="carousel-dot" onclick="currentSlide(4)"></span>
+                        <span class="carousel-dot" onclick="currentSlide(5)"></span>
+                        <span class="carousel-dot" onclick="currentSlide(6)"></span>
+                        <span class="carousel-dot" onclick="currentSlide(7)"></span>
+                        <span class="carousel-dot" onclick="currentSlide(8)"></span>
+                        <span class="carousel-dot" onclick="currentSlide(9)"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Experience Section -->
+    <section id="experience" style="background: var(--color-surface);">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Professional Experience</h2>
+                <p>Building secure systems and advancing security research across AI and traditional application security.</p>
+            </div>
+            <div class="experience-grid fade-in">
+                <div class="experience-card">
+                    <h3>AI Security Research Intern</h3>
+                    <div class="meta">Pillar Security Inc. · Sept 2025 - Present</div>
+                    <p>Researching LLM jailbreaks, Prompt Injection, and MCP vulnerabilities. Contributing to cutting-edge AI safety research and developing novel threat detection methodologies.</p>
+                </div>
+                <div class="experience-card">
+                    <h3>Teaching Assistant</h3>
+                    <div class="meta">Indiana University · Jan 2025 - Present</div>
+                    <p>Teaching cybersecurity concepts to 60+ students. Designing curriculum and lab exercises for hands-on security education.</p>
+                </div>
+                <div class="experience-card">
+                    <h3>Security Consultant</h3>
+                    <div class="meta">Synopsys · June 2022 - June 2024</div>
+                    <p>Protected 2M+ consumers across 80+ projects. Conducted security assessments, vulnerability testing, and compliance audits for enterprise clients.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Research Section -->
+    <section id="research">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Featured Research</h2>
+                <p>Published work on emerging security threats and vulnerability analysis.</p>
+            </div>
+            <div class="research-grid fade-in">
+                <div class="research-card">
+                    <h3>Breaking Payment Gateways</h3>
+                    <p>In-depth analysis of payment security vulnerabilities and exploitation techniques.</p>
+                    <a href="https://infosecwriteups.com/lets-break-into-payment-gateways-fc52523eeaca" target="_blank">Read more →</a>
+                </div>
+                <div class="research-card">
+                    <h3>LLM Jailbreak Techniques</h3>
+                    <p>Deep dive into the latest jailbreak techniques observed in the wild and their implications.</p>
+                    <a href="https://www.pillar.security/blog/deep-dive-into-the-latest-jailbreak-techniques-weve-seen-in-the-wild" target="_blank">Read more →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Skills Section -->
+    <section id="skills" style="background: var(--color-surface);">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Technical Expertise</h2>
+                <p>Comprehensive skill set across AI security, application security, and compliance frameworks.</p>
+            </div>
+            <div class="skills-grid fade-in">
+                <div class="skill-category">
+                    <h3>AI & Cloud Security</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">AWS Security</span>
+                        <span class="skill-tag">LLM Security</span>
+                        <span class="skill-tag">Prompt Injection</span>
+                        <span class="skill-tag">Cloud Architecture</span>
+                        <span class="skill-tag">MCP Vulnerabilities</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Application Security</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Burp Suite</span>
+                        <span class="skill-tag">OWASP Top 10</span>
+                        <span class="skill-tag">SANS Top 25</span>
+                        <span class="skill-tag">SAST/DAST</span>
+                        <span class="skill-tag">API Security</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Compliance</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">HIPAA</span>
+                        <span class="skill-tag">GDPR</span>
+                        <span class="skill-tag">PCI DSS</span>
+                        <span class="skill-tag">SOC 2</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Development</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Bash</span>
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">CI/CD Security</span>
+                        <span class="skill-tag">Docker</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Certifications Section -->
+    <section id="certifications">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Certifications & Achievements</h2>
+            </div>
+            <div class="cert-grid fade-in">
+                <div class="cert-item">
+                    <div class="cert-icon">✓</div>
+                    <span>AWS Certified Security – Specialty</span>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-icon">✓</div>
+                    <span>AWS Solutions Architect (Associate)</span>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-icon">✓</div>
+                    <span>CompTIA Security+</span>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-icon">✓</div>
+                    <span>Google Bughunter Hall of Fame</span>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-icon">✓</div>
+                    <span>Amazon AppSec CTF - NAMER Finalist</span>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-icon">✓</div>
+                    <span>DEF CON Goon (Volunteer) 2025</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Let's Connect</h2>
+                <p>Feel free to reach out for collaborations, opportunities, or just to chat about security.</p>
+            </div>
+            <div class="contact-links fade-in">
+                <a href="mailto:harshakshit.bit@gmail.com" class="contact-link">
+                    <span>📧</span> Email
+                </a>
+                <a href="https://linkedin.com/in/harshakshit" target="_blank" class="contact-link">
+                    <span>💼</span> LinkedIn
+                </a>
+                <a href="https://github.com/harshakshit" target="_blank" class="contact-link">
+                    <span>🐙</span> GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Harsh Akshit. All rights reserved. | Indiana, United States</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+        
+        // Carousel functionality
+        let currentSlideIndex = 0;
+        let autoSlideInterval;
+        
+        function showSlide(index) {
+            const slides = document.querySelectorAll('.carousel-slide');
+            const dots = document.querySelectorAll('.carousel-dot');
+            
+            if (index >= slides.length) currentSlideIndex = 0;
+            if (index < 0) currentSlideIndex = slides.length - 1;
+            
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            slides[currentSlideIndex].classList.add('active');
+            dots[currentSlideIndex].classList.add('active');
+        }
+        
+        function moveSlide(direction) {
+            currentSlideIndex += direction;
+            showSlide(currentSlideIndex);
+            resetAutoSlide();
+        }
+        
+        function currentSlide(index) {
+            currentSlideIndex = index;
+            showSlide(currentSlideIndex);
+            resetAutoSlide();
+        }
+        
+        function autoSlide() {
+            currentSlideIndex++;
+            showSlide(currentSlideIndex);
+        }
+        
+        function resetAutoSlide() {
+            clearInterval(autoSlideInterval);
+            autoSlideInterval = setInterval(autoSlide, 5000);
+        }
+        
+        // Start automatic slideshow
+        autoSlideInterval = setInterval(autoSlide, 5000);
+        
+        // Pause on hover
+        const carouselWrapper = document.querySelector('.carousel-wrapper');
+        if (carouselWrapper) {
+            carouselWrapper.addEventListener('mouseenter', () => clearInterval(autoSlideInterval));
+            carouselWrapper.addEventListener('mouseleave', () => resetAutoSlide());
+        }
+    </script>
+</body>
+</html>
