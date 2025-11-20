@@ -383,89 +383,216 @@
             text-decoration: underline;
         }
         
-        /* Skills */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: var(--spacing-lg);
+        /* Skills - Apple Liquid Glass Enhanced */
+        .skills-container {
+            position: relative;
             margin-top: var(--spacing-xl);
+            overflow: hidden;
+        }
+        
+        .skills-grid {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding: var(--spacing-md) 0;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            scroll-snap-type: x mandatory;
+        }
+        
+        .skills-grid::-webkit-scrollbar {
+            display: none;
         }
         
         .skill-category {
-            background: linear-gradient(135deg, #1a1d2e 0%, #0f1419 100%);
-            padding: var(--spacing-lg);
-            border-radius: 24px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            flex: 0 0 350px;
+            scroll-snap-align: start;
+            /* Multi-layer background for depth */
+            background: 
+                linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.6) 100%);
+            /* Enhanced vibrancy for content infusion */
+            backdrop-filter: saturate(200%) blur(30px) brightness(1.05);
+            -webkit-backdrop-filter: saturate(200%) blur(30px) brightness(1.05);
+            padding: 32px;
+            border-radius: 32px;
+            /* Refined border for glass edge */
+            border: 0.5px solid rgba(255, 255, 255, 0.25);
+            /* Layered shadows for optical depth */
+            box-shadow: 
+                0 1px 0 0 rgba(255, 255, 255, 0.7) inset,
+                0 -1px 0 0 rgba(255, 255, 255, 0.4) inset,
+                0 12px 40px -8px rgba(0, 0, 0, 0.12),
+                0 4px 12px -4px rgba(0, 0, 0, 0.08);
+            /* Fluid spring animation */
+            transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
             position: relative;
             overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            /* Prevent card from collapsing */
+            min-height: 200px;
         }
         
+        /* Content infusion layer - allows content color to shine through */
         .skill-category::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--color-accent) 0%, #6366f1 100%);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            bottom: 0;
+            background: radial-gradient(circle at top left, rgba(0, 113, 227, 0.08) 0%, rgba(99, 102, 241, 0.06) 50%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+            border-radius: 32px;
+            pointer-events: none;
+        }
+        
+        /* Secondary highlight layer for dimensionality */
+        .skill-category::after {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: -1px;
+            right: -1px;
+            bottom: -1px;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 50%);
+            border-radius: 32px;
+            opacity: 0;
+            transition: opacity 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+            pointer-events: none;
         }
         
         .skill-category:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 16px 48px rgba(0, 113, 227, 0.2);
-            border-color: rgba(0, 113, 227, 0.3);
+            /* Fluid lift with slight rotation for dynamism */
+            transform: translateY(-12px) scale(1.03) rotateY(2deg);
+            box-shadow: 
+                0 1px 0 0 rgba(255, 255, 255, 0.8) inset,
+                0 -1px 0 0 rgba(255, 255, 255, 0.5) inset,
+                0 24px 60px -12px rgba(0, 113, 227, 0.2),
+                0 8px 20px -6px rgba(0, 113, 227, 0.15);
+            border-color: rgba(0, 113, 227, 0.35);
+            /* Increased vibrancy on hover */
+            backdrop-filter: saturate(220%) blur(35px) brightness(1.1);
+            -webkit-backdrop-filter: saturate(220%) blur(35px) brightness(1.1);
         }
         
         .skill-category:hover::before {
-            transform: scaleX(1);
+            opacity: 1;
+        }
+        
+        .skill-category:hover::after {
+            opacity: 0.6;
         }
         
         .skill-category h3 {
             font-size: 28px;
             font-weight: 700;
-            margin-bottom: var(--spacing-md);
-            color: white;
-            letter-spacing: -0.02em;
-            line-height: 1.2;
+            margin-bottom: 20px;
+            /* Bold, simple typography per Apple guidelines */
+            color: #1d1d1f;
+            letter-spacing: -0.04em;
+            line-height: 1.1;
+            position: relative;
+            z-index: 2;
+            /* Subtle text shadow for depth against glass */
+            text-shadow: 0 0.5px 1px rgba(255, 255, 255, 0.8);
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
         
-        .skill-category h3::first-line {
-            background: linear-gradient(135deg, var(--color-accent) 0%, #6366f1 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        .skill-category:hover h3 {
+            /* Content comes forward on hover */
+            transform: translateY(-2px);
+            letter-spacing: -0.05em;
         }
         
         .skill-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
-            margin-top: var(--spacing-md);
+            gap: 8px;
+            margin-top: 16px;
+            position: relative;
+            z-index: 2;
         }
         
         .skill-tag {
-            background: rgba(255, 255, 255, 0.06);
-            padding: 10px 18px;
-            border-radius: 12px;
-            font-size: 14px;
-            font-weight: 500;
-            color: rgba(255, 255, 255, 0.9);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(10px);
+            /* Nested glass material */
+            background: 
+                linear-gradient(135deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.2) 100%),
+                rgba(240, 244, 248, 0.6);
+            backdrop-filter: saturate(150%) blur(12px);
+            -webkit-backdrop-filter: saturate(150%) blur(12px);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #1d1d1f;
+            transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+            border: 0.5px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 
+                0 1px 0 0 rgba(255, 255, 255, 0.6) inset,
+                0 2px 6px rgba(0, 0, 0, 0.06),
+                0 1px 2px rgba(0, 0, 0, 0.04);
+            cursor: pointer;
+            user-select: none;
         }
         
         .skill-tag:hover {
-            background: var(--color-accent);
+            /* Filled state with vibrancy */
+            background: linear-gradient(135deg, #0071e3 0%, #0077ed 100%);
             color: white;
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 8px 16px rgba(0, 113, 227, 0.3);
-            border-color: var(--color-accent);
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 
+                0 1px 0 0 rgba(255, 255, 255, 0.25) inset,
+                0 12px 24px rgba(0, 113, 227, 0.35),
+                0 4px 8px rgba(0, 113, 227, 0.2);
+            border-color: rgba(255, 255, 255, 0.3);
+            backdrop-filter: saturate(180%) blur(16px);
+            -webkit-backdrop-filter: saturate(180%) blur(16px);
+        }
+        
+        .skill-tag:active {
+            transform: translateY(-2px) scale(1.02);
+            transition-duration: 0.1s;
+        }
+        
+        .scroll-indicator {
+            text-align: center;
+            margin-top: 24px;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--color-secondary);
+            letter-spacing: 0.02em;
+            animation: pulseGlow 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+        }
+        
+        @keyframes pulseGlow {
+            0%, 100% { 
+                opacity: 0.4;
+                transform: scale(1);
+            }
+            50% { 
+                opacity: 0.7;
+                transform: scale(1.02);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .skill-category {
+                flex: 0 0 300px;
+                padding: 28px;
+                border-radius: 28px;
+            }
+            
+            .skill-category h3 {
+                font-size: 24px;
+            }
+            
+            .skill-tag {
+                font-size: 12px;
+                padding: 7px 14px;
+            }
         }
         
         /* Certifications */
@@ -924,52 +1051,55 @@
     </section>
     
     <!-- Skills Section -->
-    <section id="skills" style="background: linear-gradient(180deg, #ffffff 0%, #f5f5f7 100%);">
+    <section id="skills" style="background: linear-gradient(135deg, #f5f7fa 0%, #e8eef5 100%); position: relative;">
         <div class="container">
             <div class="section-header fade-in">
                 <h2>Technical Expertise</h2>
                 <p>Comprehensive skill set across AI security, application security, and compliance frameworks.</p>
             </div>
-            <div class="skills-grid fade-in">
-                <div class="skill-category">
-                    <h3>AI & Cloud Security</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">AWS Security</span>
-                        <span class="skill-tag">LLM Security</span>
-                        <span class="skill-tag">Prompt Injection</span>
-                        <span class="skill-tag">Cloud Architecture</span>
-                        <span class="skill-tag">MCP Vulnerabilities</span>
+            <div class="skills-container fade-in">
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>AI & Cloud Security</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">AWS Security</span>
+                            <span class="skill-tag">LLM Security</span>
+                            <span class="skill-tag">Prompt Injection</span>
+                            <span class="skill-tag">Cloud Architecture</span>
+                            <span class="skill-tag">MCP Vulnerabilities</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Application Security</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Burp Suite</span>
+                            <span class="skill-tag">OWASP Top 10</span>
+                            <span class="skill-tag">SANS Top 25</span>
+                            <span class="skill-tag">SAST/DAST</span>
+                            <span class="skill-tag">API Security</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Compliance</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">HIPAA</span>
+                            <span class="skill-tag">GDPR</span>
+                            <span class="skill-tag">PCI DSS</span>
+                            <span class="skill-tag">SOC 2</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Development</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">Bash</span>
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">CI/CD Security</span>
+                            <span class="skill-tag">Docker</span>
+                        </div>
                     </div>
                 </div>
-                <div class="skill-category">
-                    <h3>Application Security</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Burp Suite</span>
-                        <span class="skill-tag">OWASP Top 10</span>
-                        <span class="skill-tag">SANS Top 25</span>
-                        <span class="skill-tag">SAST/DAST</span>
-                        <span class="skill-tag">API Security</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Compliance</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">HIPAA</span>
-                        <span class="skill-tag">GDPR</span>
-                        <span class="skill-tag">PCI DSS</span>
-                        <span class="skill-tag">SOC 2</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Development</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">Bash</span>
-                        <span class="skill-tag">Git</span>
-                        <span class="skill-tag">CI/CD Security</span>
-                        <span class="skill-tag">Docker</span>
-                    </div>
-                </div>
+                <div class="scroll-indicator">← Scroll to explore →</div>
             </div>
         </div>
     </section>
