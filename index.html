@@ -12,6 +12,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
+    <!-- Credly Badge Script -->
+    <script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+    
     <style>
         * {
             margin: 0;
@@ -233,6 +236,9 @@
             border-radius: 18px;
             padding: var(--spacing-md);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            gap: var(--spacing-md);
+            align-items: start;
         }
         
         .experience-card:hover {
@@ -240,22 +246,97 @@
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         }
         
-        .experience-card h3 {
+        .company-logo {
+            width: 64px;
+            height: 64px;
+            flex-shrink: 0;
+            background: white;
+            border-radius: 12px;
+            padding: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+        
+        .company-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        .experience-content {
+            flex: 1;
+        }
+        
+        .experience-content h3 {
             font-size: 24px;
             font-weight: 600;
             margin-bottom: var(--spacing-xs);
         }
         
-        .experience-card .meta {
+        .experience-content .meta {
             color: var(--color-accent);
             font-size: 14px;
             font-weight: 500;
             margin-bottom: var(--spacing-sm);
         }
         
-        .experience-card p {
+        .experience-content p {
             color: var(--color-secondary);
             line-height: 1.7;
+        }
+        
+        /* Logo Showcase */
+        .logo-showcase {
+            margin-top: var(--spacing-lg);
+            padding: var(--spacing-md);
+            background: white;
+            border-radius: 18px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+        }
+        
+        .logo-showcase h4 {
+            text-align: center;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--color-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .logo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: var(--spacing-md);
+            align-items: center;
+        }
+        
+        .logo-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--spacing-sm);
+            transition: transform 0.3s ease;
+        }
+        
+        .logo-item:hover {
+            transform: scale(1.05);
+        }
+        
+        .logo-item img {
+            max-width: 100%;
+            height: 50px;
+            object-fit: contain;
+            filter: grayscale(100%);
+            opacity: 0.6;
+            transition: all 0.3s ease;
+        }
+        
+        .logo-item:hover img {
+            filter: grayscale(0%);
+            opacity: 1;
         }
         
         /* Research Grid */
@@ -334,8 +415,8 @@
         /* Certifications */
         .cert-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: var(--spacing-sm);
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: var(--spacing-md);
             margin-top: var(--spacing-lg);
         }
         
@@ -364,6 +445,30 @@
         .cert-item span {
             font-size: 15px;
             font-weight: 500;
+        }
+        
+        /* Credly Badges */
+        .credly-badge {
+            background: transparent;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 300px;
+        }
+        
+        .credly-badge a {
+            display: block;
+        }
+        
+        .credly-badge img {
+            width: 150px;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+        
+        .credly-badge:hover img {
+            transform: scale(1.05);
         }
         
         /* Contact Section */
@@ -476,27 +581,6 @@
             object-fit: contain;
             object-position: center;
             background: var(--color-primary);
-        }
-        
-        .carousel-caption {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
-            padding: var(--spacing-lg) var(--spacing-md);
-            color: white;
-        }
-        
-        .carousel-caption h3 {
-            font-size: 28px;
-            font-weight: 600;
-            margin-bottom: var(--spacing-xs);
-        }
-        
-        .carousel-caption p {
-            font-size: 16px;
-            color: rgba(255, 255, 255, 0.9);
         }
         
         .carousel-dots {
@@ -622,18 +706,38 @@
         <div class="container">
             <div class="section-header fade-in">
                 <h2>About Me</h2>
-                <p>Hacker mindset meets defensive strategy. Protecting 2M+ consumers while advancing the frontier of AI security research.</p>
+                <p>Cybersecurity professional with strong focus in AI and Application security, vulnerability management, and innovative security solutions. Known for identifying critical risks, and enhancing digital resilience.</p>
             </div>
             <div class="experience-grid fade-in">
                 <div class="experience-card">
-                    <h3>Master's in Cybersecurity Risk Management</h3>
-                    <div class="meta">Indiana University Bloomington</div>
-                    <p>Advanced studies in cybersecurity, risk assessment, and security architecture. Focus on emerging threats in AI and cloud security.</p>
+                    <div class="company-logo">
+                        <img src="logos/Indiana-University-Logo.png" alt="Indiana University">
+                    </div>
+                    <div class="experience-content">
+                        <h3>Master's in Cybersecurity Risk Management</h3>
+                        <div class="meta">Indiana University Bloomington</div>
+                        <p>Advanced studies in cybersecurity, risk assessment, and security architecture. Focus on emerging threats in AI and cloud security.</p>
+                    </div>
                 </div>
                 <div class="experience-card">
-                    <h3>Google Bughunter Hall of Fame</h3>
-                    <div class="meta">Recognition</div>
-                    <p>Recognized for discovering and responsibly disclosing critical security vulnerabilities in Google's infrastructure.</p>
+                    <div class="company-logo">
+                        <img src="logos/Birla_Institute_of_Technology_Mesra.png" alt="BIT Mesra">
+                    </div>
+                    <div class="experience-content">
+                        <h3>Bachelor of Technology</h3>
+                        <div class="meta">Birla Institute of Technology, Mesra</div>
+                        <p>Undergraduate degree in engineering with a focus on computer science and technology. Built a strong foundation in programming, algorithms, and system design.</p>
+                    </div>
+                </div>
+                <div class="experience-card">
+                    <div class="company-logo">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google">
+                    </div>
+                    <div class="experience-content">
+                        <h3>Google Bughunter Hall of Fame</h3>
+                        <div class="meta">Recognition</div>
+                        <p>Recognized for discovering and responsibly disclosing critical security vulnerabilities in Google's infrastructure.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -650,73 +754,33 @@
                 <div class="carousel-wrapper">
                     <div class="carousel-slide active">
                         <img src="Images/IMG_2679.jpeg" alt="Conference Event">
-                        <div class="carousel-caption">
-                            <h3>Cybersecurity Conference</h3>
-                            <p>Networking with industry leaders and security professionals</p>
-                        </div>
                     </div>
                     <div class="carousel-slide">
                         <img src="Images/IMG_3650.jpeg" alt="Security Summit">
-                        <div class="carousel-caption">
-                            <h3>Security Summit</h3>
-                            <p>Sharing insights on emerging threats and defense strategies</p>
-                        </div>
                     </div>
                     <div class="carousel-slide">
                         <img src="Images/IMG_4095.jpeg" alt="Tech Conference">
-                        <div class="carousel-caption">
-                            <h3>Tech Conference</h3>
-                            <p>Exploring the latest in AI security and cloud technologies</p>
-                        </div>
                     </div>
                     <div class="carousel-slide">
                         <img src="Images/IMG_4118.jpeg" alt="Networking Event">
-                        <div class="carousel-caption">
-                            <h3>Industry Networking</h3>
-                            <p>Building connections across the security community</p>
-                        </div>
                     </div>
                     <div class="carousel-slide">
                         <img src="Images/IMG_4779.jpeg" alt="Security Workshop">
-                        <div class="carousel-caption">
-                            <h3>Security Workshop</h3>
-                            <p>Hands-on sessions with cutting-edge security tools</p>
-                        </div>
                     </div>
                     <div class="carousel-slide">
                         <img src="Images/IMG_4928.jpeg" alt="DEF CON">
-                        <div class="carousel-caption">
-                            <h3>DEF CON Experience</h3>
-                            <p>Volunteering and learning at the world's largest hacker conference</p>
-                        </div>
                     </div>
                     <div class="carousel-slide">
                         <img src="Images/IMG_5009.jpeg" alt="Professional Meetup">
-                        <div class="carousel-caption">
-                            <h3>Professional Meetup</h3>
-                            <p>Collaborating with peers on security challenges</p>
-                        </div>
                     </div>
                     <div class="carousel-slide">
                         <img src="Images/IMG_5346.jpeg" alt="Tech Summit">
-                        <div class="carousel-caption">
-                            <h3>Tech Summit</h3>
-                            <p>Presenting research findings to the community</p>
-                        </div>
                     </div>
                     <div class="carousel-slide">
                         <img src="Images/IMG_6213.jpeg" alt="Hacker Conference">
-                        <div class="carousel-caption">
-                            <h3>Hacker Conference</h3>
-                            <p>Engaging with the offensive security community</p>
-                        </div>
                     </div>
                     <div class="carousel-slide">
                         <img src="Images/IMG_6237.jpeg" alt="Cybersecurity Event">
-                        <div class="carousel-caption">
-                            <h3>Cybersecurity Event</h3>
-                            <p>Learning from industry experts and thought leaders</p>
-                        </div>
                     </div>
                     
                     <button class="carousel-nav prev" onclick="moveSlide(-1)">‹</button>
@@ -748,19 +812,34 @@
             </div>
             <div class="experience-grid fade-in">
                 <div class="experience-card">
-                    <h3>AI Security Research Intern</h3>
-                    <div class="meta">Pillar Security Inc. · Sept 2025 - Present</div>
-                    <p>Researching LLM jailbreaks, Prompt Injection, and MCP vulnerabilities. Contributing to cutting-edge AI safety research and developing novel threat detection methodologies.</p>
+                    <div class="company-logo">
+                        <img src="logos/pillar.png" alt="Pillar Security">
+                    </div>
+                    <div class="experience-content">
+                        <h3>AI Security Research Intern</h3>
+                        <div class="meta">Pillar Security Inc. · Sept 2025 - Present</div>
+                        <p>Researching LLM jailbreaks, Prompt Injection, and MCP vulnerabilities. Contributing to cutting-edge AI safety research and developing novel threat detection methodologies.</p>
+                    </div>
                 </div>
                 <div class="experience-card">
-                    <h3>Teaching Assistant</h3>
-                    <div class="meta">Indiana University · Jan 2025 - Present</div>
-                    <p>Teaching cybersecurity concepts to 60+ students. Designing curriculum and lab exercises for hands-on security education.</p>
+                    <div class="company-logo">
+                        <img src="logos/Indiana-University-Logo.png" alt="Indiana University">
+                    </div>
+                    <div class="experience-content">
+                        <h3>Teaching Assistant</h3>
+                        <div class="meta">Indiana University · Jan 2025 - Present</div>
+                        <p>Teaching cybersecurity concepts to 60+ students. Designing curriculum and lab exercises for hands-on security education.</p>
+                    </div>
                 </div>
                 <div class="experience-card">
-                    <h3>Security Consultant</h3>
-                    <div class="meta">Synopsys · June 2022 - June 2024</div>
-                    <p>Protected 2M+ consumers across 80+ projects. Conducted security assessments, vulnerability testing, and compliance audits for enterprise clients.</p>
+                    <div class="company-logo">
+                        <img src="logos/logo_synopsys.png" alt="Synopsys">
+                    </div>
+                    <div class="experience-content">
+                        <h3>Security Consultant</h3>
+                        <div class="meta">Synopsys · June 2022 - June 2024</div>
+                        <p>Protected 2M+ consumers across 80+ projects. Conducted security assessments, vulnerability testing, and compliance audits for enterprise clients.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -846,17 +925,25 @@
                 <h2>Certifications & Achievements</h2>
             </div>
             <div class="cert-grid fade-in">
-                <div class="cert-item">
-                    <div class="cert-icon">✓</div>
-                    <span>AWS Certified Security – Specialty</span>
+                <div class="cert-item credly-badge">
+                    <a href="https://www.credly.com/badges/8e3df780-78a9-44f6-9d99-20ac9160c288" target="_blank">
+                        <img src="https://images.credly.com/size/340x340/images/00634f82-b07f-4bbd-a6bb-53de397fc3a6/image.png" alt="AWS Certified Cloud Practitioner">
+                    </a>
                 </div>
-                <div class="cert-item">
-                    <div class="cert-icon">✓</div>
-                    <span>AWS Solutions Architect (Associate)</span>
+                <div class="cert-item credly-badge">
+                    <a href="https://www.credly.com/badges/98c90261-d2b7-491f-9658-e389558dc032" target="_blank">
+                        <img src="https://images.credly.com/size/340x340/images/53acdae5-d69f-4dda-b650-d02ed7a50dd7/image.png" alt="AWS Certified Security - Specialty">
+                    </a>
                 </div>
-                <div class="cert-item">
-                    <div class="cert-icon">✓</div>
-                    <span>CompTIA Security+</span>
+                <div class="cert-item credly-badge">
+                    <a href="https://www.credly.com/badges/371fca7f-702d-454c-a4a6-170c9415fee6" target="_blank">
+                        <img src="https://images.credly.com/size/340x340/images/0e284c3f-5164-4b21-8660-0d84737941bc/image.png" alt="AWS Certified Solutions Architect - Associate">
+                    </a>
+                </div>
+                <div class="cert-item credly-badge">
+                    <a href="https://www.credly.com/badges/ce8f6a66-bd2b-4d52-8694-8051359c8606/public_url" target="_blank">
+                        <img src="https://images.credly.com/images/74790a75-8451-400a-8536-92d792c5184a/comptia-security-ce-certification.png" alt="CompTIA Security+">
+                    </a>
                 </div>
                 <div class="cert-item">
                     <div class="cert-icon">✓</div>
@@ -866,9 +953,10 @@
                     <div class="cert-icon">✓</div>
                     <span>Amazon AppSec CTF - NAMER Finalist</span>
                 </div>
-                <div class="cert-item">
-                    <div class="cert-icon">✓</div>
-                    <span>DEF CON Goon (Volunteer) 2025</span>
+                <div class="cert-item credly-badge">
+                    <a href="https://www.credly.com/badges/e0a49bc1-4c0d-4f41-a673-e9117fd8f42d/public_url" target="_blank">
+                        <img src="https://images.credly.com/images/f65c6b23-a0af-45d0-a343-323798664b93/blob" alt="DEF CON 33 Goon">
+                    </a>
                 </div>
             </div>
         </div>
