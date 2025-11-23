@@ -1,27 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Harsh Akshit - Cybersecurity Professional specializing in AI Safety, LLM Jailbreaking, and Vulnerability Management">
-    <meta name="keywords" content="AI Security, LLM Jailbreaking, Application Security, Cybersecurity, Prompt Injection, Cloud Security">
+    <meta name="description"
+        content="Harsh Akshit - Cybersecurity Professional specializing in AI Safety, LLM Jailbreaking, and Vulnerability Management">
+    <meta name="keywords"
+        content="AI Security, LLM Jailbreaking, Application Security, Cybersecurity, Prompt Injection, Cloud Security">
     <meta name="author" content="Harsh Akshit">
     <title>Harsh Akshit - AI Security Researcher</title>
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+
     <!-- Credly Badge Script -->
     <script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
-    
+
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         :root {
             --color-primary: #1d1d1f;
             --color-secondary: #6e6e73;
@@ -34,11 +41,11 @@
             --spacing-lg: 64px;
             --spacing-xl: 96px;
         }
-        
+
         html {
             scroll-behavior: smooth;
         }
-        
+
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
             color: var(--color-primary);
@@ -47,7 +54,7 @@
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
-        
+
         /* Navigation */
         nav {
             position: fixed;
@@ -59,7 +66,7 @@
             z-index: 1000;
             border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         }
-        
+
         nav .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -68,20 +75,20 @@
             justify-content: space-between;
             align-items: center;
         }
-        
+
         nav .logo {
             font-size: 20px;
             font-weight: 600;
             color: var(--color-primary);
             text-decoration: none;
         }
-        
+
         nav ul {
             display: flex;
             list-style: none;
             gap: var(--spacing-md);
         }
-        
+
         nav a {
             color: var(--color-primary);
             text-decoration: none;
@@ -89,85 +96,202 @@
             font-weight: 400;
             transition: color 0.3s ease;
         }
-        
+
         nav a:hover {
             color: var(--color-accent);
         }
-        
+
         /* Container */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 var(--spacing-md);
         }
-        
+
         /* Hero Section */
         .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            text-align: center;
-            padding: var(--spacing-xl) var(--spacing-md);
-            background: 
-                linear-gradient(135deg, rgba(0, 113, 227, 0.05) 0%, rgba(0, 113, 227, 0.02) 100%),
-                radial-gradient(circle at 20% 50%, rgba(0, 113, 227, 0.08) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(99, 102, 241, 0.06) 0%, transparent 50%),
-                linear-gradient(180deg, #ffffff 0%, #f5f5f7 100%);
+            padding: calc(80px + var(--spacing-xl)) var(--spacing-md) var(--spacing-xl);
+            background: linear-gradient(180deg, #f5f7fa 0%, #ffffff 100%);
             position: relative;
             overflow: hidden;
         }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: 
-                radial-gradient(circle at center, rgba(0, 113, 227, 0.08) 0%, transparent 50%);
-            animation: rotateGradient 20s linear infinite;
-            pointer-events: none;
+
+        .hero-container {
+            max-width: 1200px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-lg);
+            align-items: center;
         }
-        
-        @keyframes rotateGradient {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+
+        .hero-text {
+            text-align: left;
         }
-        
-        .hero-content {
-            max-width: 900px;
-            position: relative;
-            z-index: 1;
+
+        .hero-greeting {
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 600;
+            color: #1d1d1f;
+            margin-bottom: 8px;
+            line-height: 1.2;
         }
-        
-        .hero h1 {
-            font-size: clamp(48px, 8vw, 80px);
-            font-weight: 700;
-            line-height: 1.1;
-            margin-bottom: var(--spacing-md);
-            letter-spacing: -0.02em;
-            background: linear-gradient(135deg, #1d1d1f 0%, #0071e3 100%);
+
+        .hero-intro {
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 600;
+            color: #1d1d1f;
+            margin-bottom: 8px;
+            line-height: 1.2;
+        }
+
+        .hero-intro .highlight {
+            background: linear-gradient(135deg, #0071e3 0%, #0077ed 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            font-weight: 700;
         }
-        
-        .hero p {
-            font-size: clamp(18px, 3vw, 24px);
+
+        .hero-title {
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 800;
+            background: linear-gradient(135deg, #004c99 0%, #0071e3 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: var(--spacing-md);
+            line-height: 1.2;
+        }
+
+        .hero-description {
+            font-size: 16px;
             color: var(--color-secondary);
             margin-bottom: var(--spacing-lg);
-            font-weight: 400;
+            line-height: 1.6;
+            max-width: 500px;
         }
-        
+
+        .hero-cta {
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .hero-social {
+            display: flex;
+            gap: var(--spacing-sm);
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-primary);
+            text-decoration: none;
+            font-size: 20px;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+        }
+
+        .social-link:hover {
+            background: var(--color-surface);
+            transform: translateY(-2px);
+        }
+
+        .hero-visual {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .hero-image-container {
+            position: relative;
+            width: 450px;
+            height: 450px;
+        }
+
+        .blob-bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: var(--color-accent);
+            border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%;
+            animation: morphBlob 8s ease-in-out infinite;
+            z-index: 1;
+        }
+
+        @keyframes morphBlob {
+
+            0%,
+            100% {
+                border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%;
+            }
+
+            25% {
+                border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+            }
+
+            50% {
+                border-radius: 50% 50% 30% 70% / 50% 70% 30% 50%;
+            }
+
+            75% {
+                border-radius: 60% 40% 50% 50% / 57% 40% 60% 43%;
+            }
+        }
+
+        .hero-image {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 110%;
+            height: 110%;
+            object-fit: cover;
+            object-position: center center;
+            z-index: 2;
+            border-radius: 50%;
+        }
+
+        @media (max-width: 968px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text {
+                text-align: center;
+            }
+
+            .hero-description {
+                max-width: 100%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-social {
+                justify-content: center;
+            }
+
+            .hero-image-container {
+                width: 320px;
+                height: 320px;
+            }
+        }
+
         .cta-buttons {
             display: flex;
             gap: var(--spacing-sm);
             justify-content: center;
             flex-wrap: wrap;
         }
-        
+
         .btn {
             padding: 14px 28px;
             border-radius: 980px;
@@ -177,60 +301,60 @@
             transition: all 0.3s ease;
             display: inline-block;
         }
-        
+
         .btn-primary {
             background: var(--color-accent);
             color: white;
         }
-        
+
         .btn-primary:hover {
             background: #0077ED;
             transform: translateY(-2px);
             box-shadow: 0 10px 30px rgba(0, 113, 227, 0.3);
         }
-        
+
         .btn-secondary {
             background: transparent;
             color: var(--color-accent);
             border: 2px solid var(--color-accent);
         }
-        
+
         .btn-secondary:hover {
             background: var(--color-accent);
             color: white;
         }
-        
+
         /* Section */
         section {
             padding: var(--spacing-xl) 0;
         }
-        
+
         .section-header {
             text-align: center;
             margin-bottom: var(--spacing-lg);
         }
-        
+
         .section-header h2 {
             font-size: clamp(32px, 5vw, 48px);
             font-weight: 700;
             margin-bottom: var(--spacing-sm);
             letter-spacing: -0.01em;
         }
-        
+
         .section-header p {
             font-size: 18px;
             color: var(--color-secondary);
             max-width: 600px;
             margin: 0 auto;
         }
-        
+
         /* Experience Cards */
         .experience-grid {
             display: grid;
             gap: var(--spacing-md);
             margin-top: var(--spacing-lg);
         }
-        
+
         .experience-card {
             background: var(--color-surface);
             border-radius: 18px;
@@ -240,12 +364,12 @@
             gap: var(--spacing-md);
             align-items: start;
         }
-        
+
         .experience-card:hover {
             transform: translateY(-4px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         }
-        
+
         .company-logo {
             width: 64px;
             height: 64px;
@@ -258,35 +382,144 @@
             justify-content: center;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
         }
-        
+
         .company-logo img {
             width: 100%;
             height: 100%;
             object-fit: contain;
         }
-        
+
         .experience-content {
             flex: 1;
         }
-        
+
         .experience-content h3 {
             font-size: 24px;
             font-weight: 600;
             margin-bottom: var(--spacing-xs);
         }
-        
+
         .experience-content .meta {
             color: var(--color-accent);
             font-size: 14px;
             font-weight: 500;
             margin-bottom: var(--spacing-sm);
         }
-        
+
         .experience-content p {
             color: var(--color-secondary);
             line-height: 1.7;
         }
-        
+
+        /* Career Progression Connector */
+        .career-connector {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: var(--spacing-md) 0;
+            padding: var(--spacing-sm) 0;
+        }
+
+        .connector-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(180deg,
+                    rgba(0, 113, 227, 0.6) 0%,
+                    rgba(0, 113, 227, 0.3) 50%,
+                    rgba(0, 113, 227, 0.6) 100%);
+            transform: translateX(-50%);
+            filter: blur(2px);
+            animation: pulseConnection 3s ease-in-out infinite;
+        }
+
+        .connector-line::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg,
+                    rgba(0, 113, 227, 0.8) 0%,
+                    rgba(0, 113, 227, 0.5) 50%,
+                    rgba(0, 113, 227, 0.8) 100%);
+            transform: translateX(-50%);
+        }
+
+        @keyframes pulseConnection {
+
+            0%,
+            100% {
+                opacity: 0.6;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+        .connector-badge {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #0071e3 0%, #0077ed 100%);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 24px;
+            font-size: 13px;
+            font-weight: 600;
+            box-shadow:
+                0 4px 16px rgba(0, 113, 227, 0.3),
+                0 1px 0 0 rgba(255, 255, 255, 0.2) inset;
+            z-index: 1;
+            animation: fadeInBadge 0.6s ease-out;
+        }
+
+        @keyframes fadeInBadge {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .connector-badge svg {
+            width: 16px;
+            height: 16px;
+            animation: rotateStar 4s linear infinite;
+        }
+
+        @keyframes rotateStar {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .connector-badge span {
+            letter-spacing: 0.02em;
+        }
+
+        @media (max-width: 768px) {
+            .connector-badge {
+                font-size: 12px;
+                padding: 8px 16px;
+            }
+        }
+
+
         /* Logo Showcase */
         .logo-showcase {
             margin-top: var(--spacing-lg);
@@ -295,7 +528,7 @@
             border-radius: 18px;
             box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
         }
-        
+
         .logo-showcase h4 {
             text-align: center;
             font-size: 14px;
@@ -305,14 +538,14 @@
             letter-spacing: 0.1em;
             margin-bottom: var(--spacing-md);
         }
-        
+
         .logo-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
             gap: var(--spacing-md);
             align-items: center;
         }
-        
+
         .logo-item {
             display: flex;
             align-items: center;
@@ -320,11 +553,11 @@
             padding: var(--spacing-sm);
             transition: transform 0.3s ease;
         }
-        
+
         .logo-item:hover {
             transform: scale(1.05);
         }
-        
+
         .logo-item img {
             max-width: 100%;
             height: 50px;
@@ -333,12 +566,12 @@
             opacity: 0.6;
             transition: all 0.3s ease;
         }
-        
+
         .logo-item:hover img {
             filter: grayscale(0%);
             opacity: 1;
         }
-        
+
         /* Research Grid */
         .research-grid {
             display: grid;
@@ -346,7 +579,7 @@
             gap: var(--spacing-md);
             margin-top: var(--spacing-lg);
         }
-        
+
         .research-card {
             background: var(--color-bg);
             border: 1px solid rgba(0, 0, 0, 0.1);
@@ -354,42 +587,42 @@
             padding: var(--spacing-md);
             transition: all 0.3s ease;
         }
-        
+
         .research-card:hover {
             border-color: var(--color-accent);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
         }
-        
+
         .research-card h3 {
             font-size: 20px;
             font-weight: 600;
             margin-bottom: var(--spacing-xs);
         }
-        
+
         .research-card p {
             color: var(--color-secondary);
             font-size: 14px;
             margin-bottom: var(--spacing-sm);
         }
-        
+
         .research-card a {
             color: var(--color-accent);
             text-decoration: none;
             font-size: 14px;
             font-weight: 500;
         }
-        
+
         .research-card a:hover {
             text-decoration: underline;
         }
-        
+
         /* Skills - Apple Liquid Glass Enhanced */
         .skills-container {
             position: relative;
             margin-top: var(--spacing-xl);
             overflow: hidden;
         }
-        
+
         .skills-grid {
             display: flex;
             gap: 20px;
@@ -401,16 +634,16 @@
             -ms-overflow-style: none;
             scroll-snap-type: x mandatory;
         }
-        
+
         .skills-grid::-webkit-scrollbar {
             display: none;
         }
-        
+
         .skill-category {
             flex: 0 0 350px;
             scroll-snap-align: start;
             /* Multi-layer background for depth */
-            background: 
+            background:
                 linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%),
                 linear-gradient(to bottom, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.6) 100%);
             /* Enhanced vibrancy for content infusion */
@@ -421,7 +654,7 @@
             /* Refined border for glass edge */
             border: 0.5px solid rgba(255, 255, 255, 0.25);
             /* Layered shadows for optical depth */
-            box-shadow: 
+            box-shadow:
                 0 1px 0 0 rgba(255, 255, 255, 0.7) inset,
                 0 -1px 0 0 rgba(255, 255, 255, 0.4) inset,
                 0 12px 40px -8px rgba(0, 0, 0, 0.12),
@@ -433,7 +666,7 @@
             /* Prevent card from collapsing */
             min-height: 200px;
         }
-        
+
         /* Content infusion layer - allows content color to shine through */
         .skill-category::before {
             content: '';
@@ -448,7 +681,7 @@
             border-radius: 32px;
             pointer-events: none;
         }
-        
+
         /* Secondary highlight layer for dimensionality */
         .skill-category::after {
             content: '';
@@ -463,11 +696,11 @@
             transition: opacity 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
             pointer-events: none;
         }
-        
+
         .skill-category:hover {
             /* Fluid lift with slight rotation for dynamism */
             transform: translateY(-12px) scale(1.03) rotateY(2deg);
-            box-shadow: 
+            box-shadow:
                 0 1px 0 0 rgba(255, 255, 255, 0.8) inset,
                 0 -1px 0 0 rgba(255, 255, 255, 0.5) inset,
                 0 24px 60px -12px rgba(0, 113, 227, 0.2),
@@ -477,15 +710,15 @@
             backdrop-filter: saturate(220%) blur(35px) brightness(1.1);
             -webkit-backdrop-filter: saturate(220%) blur(35px) brightness(1.1);
         }
-        
+
         .skill-category:hover::before {
             opacity: 1;
         }
-        
+
         .skill-category:hover::after {
             opacity: 0.6;
         }
-        
+
         .skill-category h3 {
             font-size: 28px;
             font-weight: 700;
@@ -500,13 +733,13 @@
             text-shadow: 0 0.5px 1px rgba(255, 255, 255, 0.8);
             transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
-        
+
         .skill-category:hover h3 {
             /* Content comes forward on hover */
             transform: translateY(-2px);
             letter-spacing: -0.05em;
         }
-        
+
         .skill-tags {
             display: flex;
             flex-wrap: wrap;
@@ -515,10 +748,10 @@
             position: relative;
             z-index: 2;
         }
-        
+
         .skill-tag {
             /* Nested glass material */
-            background: 
+            background:
                 linear-gradient(135deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.2) 100%),
                 rgba(240, 244, 248, 0.6);
             backdrop-filter: saturate(150%) blur(12px);
@@ -530,20 +763,20 @@
             color: #1d1d1f;
             transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
             border: 0.5px solid rgba(255, 255, 255, 0.4);
-            box-shadow: 
+            box-shadow:
                 0 1px 0 0 rgba(255, 255, 255, 0.6) inset,
                 0 2px 6px rgba(0, 0, 0, 0.06),
                 0 1px 2px rgba(0, 0, 0, 0.04);
             cursor: pointer;
             user-select: none;
         }
-        
+
         .skill-tag:hover {
             /* Filled state with vibrancy */
             background: linear-gradient(135deg, #0071e3 0%, #0077ed 100%);
             color: white;
             transform: translateY(-4px) scale(1.05);
-            box-shadow: 
+            box-shadow:
                 0 1px 0 0 rgba(255, 255, 255, 0.25) inset,
                 0 12px 24px rgba(0, 113, 227, 0.35),
                 0 4px 8px rgba(0, 113, 227, 0.2);
@@ -551,12 +784,12 @@
             backdrop-filter: saturate(180%) blur(16px);
             -webkit-backdrop-filter: saturate(180%) blur(16px);
         }
-        
+
         .skill-tag:active {
             transform: translateY(-2px) scale(1.02);
             transition-duration: 0.1s;
         }
-        
+
         .scroll-indicator {
             text-align: center;
             margin-top: 24px;
@@ -566,35 +799,38 @@
             letter-spacing: 0.02em;
             animation: pulseGlow 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
         }
-        
+
         @keyframes pulseGlow {
-            0%, 100% { 
+
+            0%,
+            100% {
                 opacity: 0.4;
                 transform: scale(1);
             }
-            50% { 
+
+            50% {
                 opacity: 0.7;
                 transform: scale(1.02);
             }
         }
-        
+
         @media (max-width: 768px) {
             .skill-category {
                 flex: 0 0 300px;
                 padding: 28px;
                 border-radius: 28px;
             }
-            
+
             .skill-category h3 {
                 font-size: 24px;
             }
-            
+
             .skill-tag {
                 font-size: 12px;
                 padding: 7px 14px;
             }
         }
-        
+
         /* Certifications */
         .cert-grid {
             display: grid;
@@ -602,7 +838,7 @@
             gap: var(--spacing-md);
             margin-top: var(--spacing-lg);
         }
-        
+
         .cert-item {
             background: var(--color-surface);
             padding: var(--spacing-sm);
@@ -611,7 +847,7 @@
             align-items: center;
             gap: var(--spacing-sm);
         }
-        
+
         .cert-icon {
             width: 40px;
             height: 40px;
@@ -624,12 +860,12 @@
             font-size: 20px;
             flex-shrink: 0;
         }
-        
+
         .cert-item span {
             font-size: 15px;
             font-weight: 500;
         }
-        
+
         /* Credly Badges */
         .credly-badge {
             background: transparent;
@@ -639,27 +875,27 @@
             align-items: center;
             min-height: 300px;
         }
-        
+
         .credly-badge a {
             display: block;
         }
-        
+
         .credly-badge img {
             width: 150px;
             height: auto;
             transition: transform 0.3s ease;
         }
-        
+
         .credly-badge:hover img {
             transform: scale(1.05);
         }
-        
+
         /* Contact Section */
         .contact-section {
             background: var(--color-surface);
             text-align: center;
         }
-        
+
         .contact-links {
             display: flex;
             justify-content: center;
@@ -667,7 +903,7 @@
             margin-top: var(--spacing-md);
             flex-wrap: wrap;
         }
-        
+
         .contact-link {
             display: flex;
             align-items: center;
@@ -680,12 +916,12 @@
             font-weight: 500;
             transition: all 0.3s ease;
         }
-        
+
         .contact-link:hover {
             transform: translateY(-2px);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
-        
+
         /* Footer */
         footer {
             background: var(--color-primary);
@@ -694,50 +930,50 @@
             padding: var(--spacing-md);
             font-size: 14px;
         }
-        
+
         footer a {
             color: var(--color-surface);
             text-decoration: none;
         }
-        
+
         footer a:hover {
             text-decoration: underline;
         }
-        
+
         /* Responsive */
         @media (max-width: 768px) {
             nav ul {
                 gap: var(--spacing-sm);
             }
-            
+
             nav a {
                 font-size: 12px;
             }
-            
+
             .hero {
                 padding: var(--spacing-lg) var(--spacing-sm);
             }
-            
+
             .research-grid,
             .skills-grid {
                 grid-template-columns: 1fr;
             }
         }
-        
+
         /* Image Carousel */
         .carousel-section {
             background: var(--color-primary);
             padding: var(--spacing-xl) 0;
             overflow: hidden;
         }
-        
+
         .carousel-container {
             position: relative;
             max-width: 1400px;
             margin: 0 auto;
             height: 600px;
         }
-        
+
         .carousel-wrapper {
             position: relative;
             width: 100%;
@@ -745,7 +981,7 @@
             overflow: hidden;
             border-radius: 24px;
         }
-        
+
         .carousel-slide {
             position: absolute;
             width: 100%;
@@ -753,11 +989,11 @@
             opacity: 0;
             transition: opacity 1s ease-in-out;
         }
-        
+
         .carousel-slide.active {
             opacity: 1;
         }
-        
+
         .carousel-slide img {
             width: 100%;
             height: 100%;
@@ -765,7 +1001,7 @@
             object-position: center;
             background: var(--color-primary);
         }
-        
+
         .carousel-dots {
             position: absolute;
             bottom: 30px;
@@ -775,7 +1011,7 @@
             gap: 12px;
             z-index: 10;
         }
-        
+
         .carousel-dot {
             width: 8px;
             height: 8px;
@@ -784,13 +1020,13 @@
             cursor: pointer;
             transition: all 0.3s ease;
         }
-        
+
         .carousel-dot.active {
             background: white;
             width: 24px;
             border-radius: 4px;
         }
-        
+
         .carousel-nav {
             position: absolute;
             top: 50%;
@@ -810,45 +1046,45 @@
             transition: all 0.3s ease;
             z-index: 10;
         }
-        
+
         .carousel-nav:hover {
             background: rgba(255, 255, 255, 0.3);
             transform: translateY(-50%) scale(1.1);
         }
-        
+
         .carousel-nav.prev {
             left: 20px;
         }
-        
+
         .carousel-nav.next {
             right: 20px;
         }
-        
+
         /* Scroll animations */
         .fade-in {
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 0.6s ease, transform 0.6s ease;
         }
-        
+
         .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
         }
-        
+
         @media (max-width: 768px) {
             .carousel-container {
                 height: 400px;
             }
-            
+
             .carousel-caption h3 {
                 font-size: 20px;
             }
-            
+
             .carousel-caption p {
                 font-size: 14px;
             }
-            
+
             .carousel-nav {
                 width: 40px;
                 height: 40px;
@@ -857,6 +1093,7 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Navigation -->
     <nav>
@@ -871,25 +1108,70 @@
             </ul>
         </div>
     </nav>
-    
+
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-content">
-            <h1>Bridging AI and Security</h1>
-            <p>Cybersecurity professional specializing in AI Safety, LLM Jailbreaking, and Vulnerability Management</p>
-            <div class="cta-buttons">
-                <a href="#contact" class="btn btn-primary">Get in Touch</a>
-                <a href="#research" class="btn btn-secondary">View Research</a>
+        <div class="hero-container">
+            <div class="hero-text">
+                <div class="hero-greeting">Hi,</div>
+                <div class="hero-intro">I'm <span class="highlight">Harsh Akshit</span></div>
+                <div class="hero-title">AI Security Researcher</div>
+                <p class="hero-description">
+                    Cybersecurity professional specializing in AI Safety, LLM Jailbreaking, and Vulnerability Management
+                </p>
+                <div class="hero-cta">
+                    <a href="#contact" class="btn btn-primary">Get in Touch</a>
+                </div>
+                <div class="hero-social">
+                    <a href="https://linkedin.com/in/harshakshit" target="_blank" class="social-link" title="LinkedIn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                        </svg>
+                    </a>
+                    <a href="https://github.com/harshakshit" target="_blank" class="social-link" title="GitHub">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                        </svg>
+                    </a>
+                    <a href="mailto:harshakshit.bit@gmail.com" class="social-link" title="Email">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-image-container">
+                    <div class="blob-bg"></div>
+                    <img src="Images/IMG_5346.jpeg" alt="Harsh Akshit" class="hero-image">
+                </div>
             </div>
         </div>
     </section>
-    
+
     <!-- About Section -->
     <section id="about">
         <div class="container">
             <div class="section-header fade-in">
                 <h2>About Me</h2>
-                <p>Cybersecurity professional with strong focus in AI and Application security, vulnerability management, and innovative security solutions. Known for identifying critical risks, and enhancing digital resilience.</p>
+                <p>Information Security enthusiast with strong focus in AI and Application security, vulnerability
+                    management, and innovative security solutions. Passionate about travelling and exploring diverse
+                    cultures. Featured in Google Bug Hunter Hall of Fame. Known for identifying critical risks and
+                    enhancing digital resilience. Want to discuss about security of your product, let's chime in
+                    sometime.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" style="background: var(--color-surface);">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Education</h2>
+                <p>Academic journey in cybersecurity and computer science</p>
             </div>
             <div class="experience-grid fade-in">
                 <div class="experience-card">
@@ -898,8 +1180,9 @@
                     </div>
                     <div class="experience-content">
                         <h3>Master's in Cybersecurity Risk Management</h3>
-                        <div class="meta">Indiana University Bloomington</div>
-                        <p>Advanced studies in cybersecurity, risk assessment, and security architecture. Focus on emerging threats in AI and cloud security.</p>
+                        <div class="meta">Indiana University Bloomington · August 2024 - May 2026</div>
+                        <p>Advanced studies in cybersecurity, risk assessment, and security architecture. Focus on
+                            emerging threats in AI and cloud security.</p>
                     </div>
                 </div>
                 <div class="experience-card">
@@ -908,30 +1191,22 @@
                     </div>
                     <div class="experience-content">
                         <h3>Bachelor of Technology</h3>
-                        <div class="meta">Birla Institute of Technology, Mesra</div>
-                        <p>Undergraduate degree in engineering with a focus on computer science and technology. Built a strong foundation in programming, algorithms, and system design.</p>
-                    </div>
-                </div>
-                <div class="experience-card">
-                    <div class="company-logo">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google">
-                    </div>
-                    <div class="experience-content">
-                        <h3>Google Bughunter Hall of Fame</h3>
-                        <div class="meta">Recognition</div>
-                        <p>Recognized for discovering and responsibly disclosing critical security vulnerabilities in Google's infrastructure.</p>
+                        <div class="meta">Birla Institute of Technology, Mesra · 2018 - 2022</div>
+                        <p>Bachelor's degree, Computer Science. Built a strong foundation in programming, algorithms,
+                            and system design.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    
+
     <!-- Image Carousel Section -->
     <section class="carousel-section">
         <div class="container">
             <div class="section-header fade-in" style="color: white; margin-bottom: var(--spacing-lg);">
                 <h2>Conferences & Networking</h2>
-                <p style="color: rgba(255, 255, 255, 0.8);">Connecting with the cybersecurity community at events worldwide</p>
+                <p style="color: rgba(255, 255, 255, 0.8);">Connecting with the cybersecurity community at events
+                    worldwide</p>
             </div>
             <div class="carousel-container fade-in">
                 <div class="carousel-wrapper">
@@ -965,10 +1240,10 @@
                     <div class="carousel-slide">
                         <img src="Images/IMG_6237.jpeg" alt="Cybersecurity Event">
                     </div>
-                    
+
                     <button class="carousel-nav prev" onclick="moveSlide(-1)">‹</button>
                     <button class="carousel-nav next" onclick="moveSlide(1)">›</button>
-                    
+
                     <div class="carousel-dots">
                         <span class="carousel-dot active" onclick="currentSlide(0)"></span>
                         <span class="carousel-dot" onclick="currentSlide(1)"></span>
@@ -985,13 +1260,14 @@
             </div>
         </div>
     </section>
-    
+
     <!-- Experience Section -->
     <section id="experience" style="background: var(--color-surface);">
         <div class="container">
             <div class="section-header fade-in">
                 <h2>Professional Experience</h2>
-                <p>Building secure systems and advancing security research across AI and traditional application security.</p>
+                <p>Building secure systems and advancing security research across AI and traditional application
+                    security.</p>
             </div>
             <div class="experience-grid fade-in">
                 <div class="experience-card">
@@ -1000,8 +1276,15 @@
                     </div>
                     <div class="experience-content">
                         <h3>AI Security Research Intern</h3>
-                        <div class="meta">Pillar Security Inc. · Sept 2025 - Present</div>
-                        <p>Researching LLM jailbreaks, Prompt Injection, and MCP vulnerabilities. Contributing to cutting-edge AI safety research and developing novel threat detection methodologies.</p>
+                        <div class="meta">Pillar Security Inc. · September 2025 - Present (3 months)</div>
+                        <p>
+                            • Conducting in-depth research on adversarial attacks against large language models (LLMs),
+                            focusing on jailbreaks and prompt injection techniques<br>
+                            • Explored security risks associated with Model Context Protocol (MCP) and Agentic AI,
+                            utilizing red-teaming methodologies<br>
+                            • Contributing to thought leadership blogs and internal reports, enhancing the community's
+                            understanding of AI/ML security threats
+                        </p>
                     </div>
                 </div>
                 <div class="experience-card">
@@ -1010,8 +1293,21 @@
                     </div>
                     <div class="experience-content">
                         <h3>Teaching Assistant</h3>
-                        <div class="meta">Indiana University · Jan 2025 - Present</div>
-                        <p>Teaching cybersecurity concepts to 60+ students. Designing curriculum and lab exercises for hands-on security education.</p>
+                        <div class="meta">Indiana University Bloomington · January 2025 - Present (11 months)</div>
+                        <p>
+                            • <strong>[INFO-I 230 Analytical Foundation of Cybersecurity]</strong> Assisted in
+                            delivering over 24 foundational security concepts, including cryptography, risk assessment,
+                            access control, and secure system design, to undergraduate students. Provided technical
+                            support to over 60 students, graded assignments, and facilitated 15+ lab sessions,
+                            significantly improving students' practical understanding of foundational cybersecurity
+                            concepts<br><br>
+                            • <strong>[CSCI A-541: Computing & Technology Bootcamp]</strong> Assisted in delivering a
+                            high-level introduction to computing, networking, cybersecurity, AI, and cloud technologies
+                            for students from non-technical backgrounds. Supported course instruction through clarifying
+                            technical concepts, guiding discussions, grading assignments/exams, and helping students
+                            build foundational knowledge to engage in policy, business, and legal decision-making around
+                            technology
+                        </p>
                     </div>
                 </div>
                 <div class="experience-card">
@@ -1020,14 +1316,86 @@
                     </div>
                     <div class="experience-content">
                         <h3>Security Consultant</h3>
-                        <div class="meta">Synopsys · June 2022 - June 2024</div>
-                        <p>Protected 2M+ consumers across 80+ projects. Conducted security assessments, vulnerability testing, and compliance audits for enterprise clients.</p>
+                        <div class="meta">Synopsys Inc. · June 2022 - June 2024 (2 years 1 month)</div>
+                        <p>
+                            • Protected 2M+ consumers across 80+ projects through comprehensive security assessments<br>
+                            • Conducted application security testing (AppSec), software composition analysis (SCA), and
+                            static application security testing (SAST)<br>
+                            • Performed vulnerability testing and compliance audits for enterprise clients<br>
+                            • Worked with notable clients including CVS Healthcare, Global Payments, nCino, Prometric,
+                            Intuit, and others
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Career Progression Connector -->
+                <div class="career-connector">
+                    <div class="connector-line"></div>
+                    <div class="connector-badge">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 2L12.5 7L18 8L14 12L15 18L10 15L5 18L6 12L2 8L7.5 7L10 2Z"
+                                fill="currentColor" />
+                        </svg>
+                        <span>Converted to Full-Time</span>
+                    </div>
+                </div>
+
+                <div class="experience-card">
+                    <div class="company-logo">
+                        <img src="logos/logo_synopsys.png" alt="Synopsys">
+                    </div>
+                    <div class="experience-content">
+                        <h3>Intern (Technical - Engineering)</h3>
+                        <div class="meta">Synopsys Inc. · January 2022 - May 2022 (5 months)</div>
+                        <p>Bengaluru, Karnataka, India</p>
+                    </div>
+                </div>
+                <div class="experience-card">
+                    <div class="company-logo">
+                        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="64" height="64" rx="12" fill="#0071e3" />
+                            <text x="32" y="40" font-family="Arial, sans-serif" font-size="28" font-weight="bold"
+                                fill="white" text-anchor="middle">DT</text>
+                        </svg>
+                    </div>
+                    <div class="experience-content">
+                        <h3>Cyber Security Instructor</h3>
+                        <div class="meta">Devtown · June 2021 - December 2021 (7 months)</div>
+                        <p>Bengaluru, Karnataka, India</p>
+                    </div>
+                </div>
+                <div class="experience-card">
+                    <div class="company-logo">
+                        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="64" height="64" rx="12" fill="#6366f1" />
+                            <text x="32" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold"
+                                fill="white" text-anchor="middle">CL</text>
+                        </svg>
+                    </div>
+                    <div class="experience-content">
+                        <h3>Cyber Security Trainee</h3>
+                        <div class="meta">Castellum Labs · May 2021 - July 2021 (3 months)</div>
+                        <p>Hyderabad, Telangana, India</p>
+                    </div>
+                </div>
+                <div class="experience-card">
+                    <div class="company-logo">
+                        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="64" height="64" rx="12" fill="#ec4899" />
+                            <text x="32" y="40" font-family="Arial, sans-serif" font-size="28" font-weight="bold"
+                                fill="white" text-anchor="middle">T</text>
+                        </svg>
+                    </div>
+                    <div class="experience-content">
+                        <h3>Security Analyst Intern</h3>
+                        <div class="meta">Twimbit · March 2020 - July 2020 (5 months)</div>
+                        <p>Noida, Uttar Pradesh</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    
+
     <!-- Research Section -->
     <section id="research">
         <div class="container">
@@ -1039,17 +1407,19 @@
                 <div class="research-card">
                     <h3>Breaking Payment Gateways</h3>
                     <p>In-depth analysis of payment security vulnerabilities and exploitation techniques.</p>
-                    <a href="https://infosecwriteups.com/lets-break-into-payment-gateways-fc52523eeaca" target="_blank">Read more →</a>
+                    <a href="https://infosecwriteups.com/lets-break-into-payment-gateways-fc52523eeaca"
+                        target="_blank">Read more →</a>
                 </div>
                 <div class="research-card">
                     <h3>LLM Jailbreak Techniques</h3>
                     <p>Deep dive into the latest jailbreak techniques observed in the wild and their implications.</p>
-                    <a href="https://www.pillar.security/blog/deep-dive-into-the-latest-jailbreak-techniques-weve-seen-in-the-wild" target="_blank">Read more →</a>
+                    <a href="https://www.pillar.security/blog/deep-dive-into-the-latest-jailbreak-techniques-weve-seen-in-the-wild"
+                        target="_blank">Read more →</a>
                 </div>
             </div>
         </div>
     </section>
-    
+
     <!-- Skills Section -->
     <section id="skills" style="background: linear-gradient(135deg, #f5f7fa 0%, #e8eef5 100%); position: relative;">
         <div class="container">
@@ -1103,7 +1473,7 @@
             </div>
         </div>
     </section>
-    
+
     <!-- Certifications Section -->
     <section id="certifications">
         <div class="container">
@@ -1113,32 +1483,46 @@
             <div class="cert-grid fade-in">
                 <div class="cert-item credly-badge">
                     <a href="https://www.credly.com/badges/8e3df780-78a9-44f6-9d99-20ac9160c288" target="_blank">
-                        <img src="https://images.credly.com/size/340x340/images/00634f82-b07f-4bbd-a6bb-53de397fc3a6/image.png" alt="AWS Certified Cloud Practitioner">
+                        <img src="https://images.credly.com/size/340x340/images/00634f82-b07f-4bbd-a6bb-53de397fc3a6/image.png"
+                            alt="AWS Certified Cloud Practitioner">
                     </a>
                 </div>
                 <div class="cert-item credly-badge">
                     <a href="https://www.credly.com/badges/98c90261-d2b7-491f-9658-e389558dc032" target="_blank">
-                        <img src="https://images.credly.com/size/340x340/images/53acdae5-d69f-4dda-b650-d02ed7a50dd7/image.png" alt="AWS Certified Security - Specialty">
+                        <img src="https://images.credly.com/size/340x340/images/53acdae5-d69f-4dda-b650-d02ed7a50dd7/image.png"
+                            alt="AWS Certified Security - Specialty">
                     </a>
                 </div>
                 <div class="cert-item credly-badge">
                     <a href="https://www.credly.com/badges/371fca7f-702d-454c-a4a6-170c9415fee6" target="_blank">
-                        <img src="https://images.credly.com/size/340x340/images/0e284c3f-5164-4b21-8660-0d84737941bc/image.png" alt="AWS Certified Solutions Architect - Associate">
+                        <img src="https://images.credly.com/size/340x340/images/0e284c3f-5164-4b21-8660-0d84737941bc/image.png"
+                            alt="AWS Certified Solutions Architect - Associate">
                     </a>
                 </div>
                 <div class="cert-item credly-badge">
-                    <a href="https://www.credly.com/badges/ce8f6a66-bd2b-4d52-8694-8051359c8606/public_url" target="_blank">
+                    <a href="https://www.credly.com/badges/ce8f6a66-bd2b-4d52-8694-8051359c8606/public_url"
+                        target="_blank">
                         <img src="logos/comptia-security-ce-certification.png" alt="CompTIA Security+">
                     </a>
                 </div>
                 <div class="cert-item credly-badge">
-                    <a href="https://www.credly.com/badges/e0a49bc1-4c0d-4f41-a673-e9117fd8f42d/public_url" target="_blank">
+                    <a href="https://www.credly.com/badges/e0a49bc1-4c0d-4f41-a673-e9117fd8f42d/public_url"
+                        target="_blank">
                         <img src="logos/def-con-33-goon.png" alt="DEF CON 33 Goon">
                     </a>
                 </div>
-                <div class="cert-item">
-                    <div class="cert-icon">✓</div>
-                    <span>Google Bughunter Hall of Fame</span>
+                <div class="cert-item credly-badge">
+                    <div class="company-logo"
+                        style="background: white; border-radius: 12px; padding: 12px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google"
+                            style="width: 100%; height: auto;">
+                    </div>
+                    <div style="text-align: center; margin-top: 12px;">
+                        <h4 style="font-size: 14px; font-weight: 600; margin-bottom: 4px;">Google Bughunter Hall of Fame
+                        </h4>
+                        <p style="font-size: 12px; color: var(--color-secondary); margin: 0;">Recognized for discovering
+                            and responsibly disclosing critical security vulnerabilities in Google's infrastructure.</p>
+                    </div>
                 </div>
                 <div class="cert-item">
                     <div class="cert-icon">✓</div>
@@ -1147,7 +1531,7 @@
             </div>
         </div>
     </section>
-    
+
     <!-- Contact Section -->
     <section id="contact" class="contact-section">
         <div class="container">
@@ -1168,21 +1552,21 @@
             </div>
         </div>
     </section>
-    
+
     <!-- Footer -->
     <footer>
         <div class="container">
             <p>&copy; 2025 Harsh Akshit. All rights reserved. | Indiana, United States</p>
         </div>
     </footer>
-    
+
     <script>
         // Scroll animations
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
         };
-        
+
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -1190,52 +1574,52 @@
                 }
             });
         }, observerOptions);
-        
+
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-        
+
         // Carousel functionality
         let currentSlideIndex = 0;
         let autoSlideInterval;
-        
+
         function showSlide(index) {
             const slides = document.querySelectorAll('.carousel-slide');
             const dots = document.querySelectorAll('.carousel-dot');
-            
+
             if (index >= slides.length) currentSlideIndex = 0;
             if (index < 0) currentSlideIndex = slides.length - 1;
-            
+
             slides.forEach(slide => slide.classList.remove('active'));
             dots.forEach(dot => dot.classList.remove('active'));
-            
+
             slides[currentSlideIndex].classList.add('active');
             dots[currentSlideIndex].classList.add('active');
         }
-        
+
         function moveSlide(direction) {
             currentSlideIndex += direction;
             showSlide(currentSlideIndex);
             resetAutoSlide();
         }
-        
+
         function currentSlide(index) {
             currentSlideIndex = index;
             showSlide(currentSlideIndex);
             resetAutoSlide();
         }
-        
+
         function autoSlide() {
             currentSlideIndex++;
             showSlide(currentSlideIndex);
         }
-        
+
         function resetAutoSlide() {
             clearInterval(autoSlideInterval);
             autoSlideInterval = setInterval(autoSlide, 5000);
         }
-        
+
         // Start automatic slideshow
         autoSlideInterval = setInterval(autoSlide, 5000);
-        
+
         // Pause on hover
         const carouselWrapper = document.querySelector('.carousel-wrapper');
         if (carouselWrapper) {
@@ -1244,4 +1628,5 @@
         }
     </script>
 </body>
+
 </html>
