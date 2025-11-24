@@ -837,6 +837,7 @@
             grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
             gap: var(--spacing-md);
             margin-top: var(--spacing-lg);
+            justify-items: center;
         }
 
         .cert-item {
@@ -901,7 +902,11 @@
             justify-content: center;
             gap: var(--spacing-md);
             margin-top: var(--spacing-md);
-            flex-wrap: wrap;
+            /* Removed flex-wrap: wrap; to keep cards horizontal */
+            max-width: 800px;
+            /* Adjusted max-width */
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .contact-link {
@@ -1511,22 +1516,56 @@
                         <img src="logos/def-con-33-goon.png" alt="DEF CON 33 Goon">
                     </a>
                 </div>
-                <div class="cert-item credly-badge">
-                    <div class="company-logo"
-                        style="background: white; border-radius: 12px; padding: 12px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google"
-                            style="width: 100%; height: auto;">
+                <div class="cert-item credly-badge"
+                    style="background: #FFFFFF; border: 2px solid #4285F4; padding: 20px; border-radius: 12px; box-shadow: 0 4px 16px rgba(66, 133, 244, 0.2);">
+                    <div style="text-align: center; margin-bottom: 12px;">
+                        <div
+                            style="width: 60px; height: 60px; margin: 0 auto 8px; display: flex; align-items: center; justify-content: center;">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
+                                alt="Google" style="width: 100%; height: auto;">
+                        </div>
+                        <h4
+                            style="font-size: 15px; font-weight: 700; color: #202124; margin: 0 0 4px 0; line-height: 1.2;">
+                            Google Bughunter Hall of Fame</h4>
+                        <p style="font-size: 12px; color: #666666; margin: 0; line-height: 1.3;">Recognition</p>
                     </div>
-                    <div style="text-align: center; margin-top: 12px;">
-                        <h4 style="font-size: 14px; font-weight: 600; margin-bottom: 4px;">Google Bughunter Hall of Fame
-                        </h4>
-                        <p style="font-size: 12px; color: var(--color-secondary); margin: 0;">Recognized for discovering
-                            and responsibly disclosing critical security vulnerabilities in Google's infrastructure.</p>
+                    <div
+                        style="background: linear-gradient(135deg, #4285F4 0%, #5E9BF7 100%); padding: 12px; border-radius: 8px; text-align: center;">
+                        <p style="font-size: 11px; color: #FFFFFF; font-weight: 600; margin: 0; line-height: 1.4;">
+                            Recognized for discovering and responsibly disclosing critical security vulnerabilities in
+                            Google's infrastructure.</p>
                     </div>
                 </div>
-                <div class="cert-item">
-                    <div class="cert-icon">✓</div>
-                    <span>Amazon AppSec CTF - NAMER Finalist</span>
+                <div class="cert-item credly-badge"
+                    style="background: #FFFFFF; border: 2px solid #FF9900; padding: 20px; border-radius: 12px; box-shadow: 0 4px 16px rgba(255, 153, 0, 0.2);">
+                    <div style="text-align: center; margin-bottom: 12px;">
+                        <div style="font-size: 40px; margin-bottom: 8px;">🏆</div>
+                        <h4
+                            style="font-size: 15px; font-weight: 700; color: #232F3E; margin: 0 0 4px 0; line-height: 1.2;">
+                            Amazon AppSec CTF</h4>
+                        <p style="font-size: 12px; color: #666666; margin: 0; line-height: 1.3;">NAMER - North America
+                        </p>
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr; gap: 8px; margin-top: 12px;">
+                        <div
+                            style="background: linear-gradient(135deg, #FF9900 0%, #FFB84D 100%); padding: 10px 12px; border-radius: 8px; text-align: center;">
+                            <div
+                                style="font-size: 22px; font-weight: 700; color: #FFFFFF; line-height: 1; text-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+                                15th</div>
+                            <div
+                                style="font-size: 11px; color: #FFFFFF; font-weight: 600; margin-top: 4px; line-height: 1.2;">
+                                Rank / 143 Teams</div>
+                        </div>
+                        <div
+                            style="background: linear-gradient(135deg, #FF9900 0%, #FFB84D 100%); padding: 10px 12px; border-radius: 8px; text-align: center;">
+                            <div
+                                style="font-size: 22px; font-weight: 700; color: #FFFFFF; line-height: 1; text-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+                                10,200</div>
+                            <div
+                                style="font-size: 11px; color: #FFFFFF; font-weight: 600; margin-top: 4px; line-height: 1.2;">
+                                Total Points</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
