@@ -83,12 +83,40 @@ Professional Journey
 
 #### H3 (Role Title)
 ```
+AI Security Research Engineer
+```
+
+#### H4 (Company + Duration)
+```
+Wingback Security, Inc. | June 2026 – Present
+```
+
+#### Location Badge
+```
+📍 Sunnyvale, CA
+```
+
+#### Body Copy
+```
+Researching emerging attack paths across AI agents, LLM applications, MCP connectors, and
+autonomous tool-use workflows—including prompt injection, tool abuse, permission misuse, and
+data leakage. Building evaluation pipelines, adversarial test cases, and benchmark datasets,
+and converting research findings into detection logic and product capabilities for the
+Wingback platform.
+```
+
+---
+
+### Position 2
+
+#### H3 (Role Title)
+```
 AI Security Research Intern
 ```
 
 #### H4 (Company + Duration)
 ```
-Pillar Security Inc. | September 2025 – Present
+Pillar Security Inc. | September 2025 – December 2025
 ```
 
 #### Location Badge
@@ -115,7 +143,7 @@ whitepapers, and go-to-market assets that inform both product strategy and indus
 
 ---
 
-### Position 2
+### Position 3
 
 #### H3 (Role Title)
 ```
@@ -124,7 +152,7 @@ Teaching Assistant - Cybersecurity Foundations
 
 #### H4 (Company + Duration)
 ```
-Indiana University Bloomington | January 2025 – Present
+Indiana University Bloomington | January 2025 – December 2025
 ```
 
 #### Location Badge
@@ -151,7 +179,7 @@ sessions covering network security, cryptography, and secure coding practices.
 
 ---
 
-### Position 3
+### Position 4
 
 #### H3 (Role Title)
 ```

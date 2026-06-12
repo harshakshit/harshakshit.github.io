@@ -110,7 +110,8 @@ portfolio-explorash/
 
 ### 3. **Professional Journey (Timeline)**
 Interactive timeline featuring:
-- **AI Security Research Intern** @ Pillar Security Inc. (Current)
+- **AI Security Research Engineer** @ Wingback Security, Inc. (Current)
+- **AI Security Research Intern** @ Pillar Security Inc.
 - **Teaching Assistant** @ Indiana University Bloomington
 - **Security Consultant** @ Synopsys (formerly Cigital)
 
