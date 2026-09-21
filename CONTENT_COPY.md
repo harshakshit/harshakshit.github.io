@@ -83,12 +83,37 @@ Professional Journey
 
 #### H3 (Role Title)
 ```
+AI Security Researcher
+```
+
+#### H4 (Company + Duration)
+```
+Metano | June 2026 – Present
+```
+
+#### Body Copy
+```
+Researching attacks against agentic AI systems—malicious and backdoored agent skills, MCP
+connectors, and autonomous tool-use workflows—covering prompt injection, sleeper skills,
+privilege misuse, and data exfiltration. Building dynamic analysis behind SkillTracer,
+detonating agent skills in an instrumented sandbox across multiple models to compare stated
+intent against actual runtime behavior, with findings scored via AIVSS and mapped to the OWASP
+Agentic Top 10. Converting research into detection and governance logic for Metano's security
+control plane, and publishing threat research on emerging agentic attack patterns.
+```
+
+---
+
+### Position 1b
+
+#### H3 (Role Title)
+```
 AI Security Research Engineer
 ```
 
 #### H4 (Company + Duration)
 ```
-Wingback Security, Inc. | June 2026 – Present
+Wingback Security, Inc. | June 2026
 ```
 
 #### Location Badge
@@ -222,6 +247,81 @@ major healthcare clients like CVS Healthcare. Ensured compliance with industry s
 ```
 Featured Research & Projects
 ```
+
+---
+
+### Project Card 0 (Metano Labs)
+
+#### H3 (Title)
+```
+Sleeper Skills: The Skill You Approved Is Not the Skill Running Now
+```
+
+#### Category Badge
+```
+🧪 Agentic AI Security Research
+```
+
+#### Body Copy
+```
+Research into the self-update trust gap in AI agent skills: a marketplace audit score attests to
+the artifact that was scanned, not to whatever the skill silently becomes after an auto-update.
+A scan across multiple skill marketplaces found 50+ skills carrying self-update capability, with
+28k+ downloads and 23k+ stars between them.
+```
+
+#### Publication Info
+```
+Published on the Metano blog
+```
+
+#### CTA Link
+```
+→ Read Full Research
+```
+
+**URL**: `https://metano.ai/post/sleeper-skills`
+
+#### Tech Tags
+`Agent Skills` `Supply Chain` `AI Security` `Marketplace Trust`
+
+---
+
+### Project Card 0b (Metano Labs)
+
+#### H3 (Title)
+```
+The Ghost in the Skills
+```
+
+#### Category Badge
+```
+👻 Agentic AI Supply Chain Research
+```
+
+#### Body Copy
+```
+Public AI agent skills instruct agents to install packages that were never published. The names
+sit unregistered on PyPI, npm and RubyGems, allocation is first come first served, and whoever
+claims the name inherits code execution on every machine whose agent was told to install it — a
+supply chain attack nobody had to break in to stage. The same defect appears across unrelated
+skill collections on more than one marketplace.
+```
+
+#### Publication Info
+```
+Published on the Metano blog
+```
+
+#### CTA Link
+```
+→ Read Full Research
+```
+
+**URL**: `https://metano.ai/post/the-ghost-in-the-skills`
+
+#### Tech Tags
+`Agent Skills` `Dependency Confusion` `Supply Chain` `Package Squatting`
 
 ---
 

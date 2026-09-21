@@ -110,12 +110,15 @@ portfolio-explorash/
 
 ### 3. **Professional Journey (Timeline)**
 Interactive timeline featuring:
-- **AI Security Research Engineer** @ Wingback Security, Inc. (Current)
+- **AI Security Researcher** @ Metano (Current)
+- **AI Security Research Engineer** @ Wingback Security, Inc.
 - **AI Security Research Intern** @ Pillar Security Inc.
 - **Teaching Assistant** @ Indiana University Bloomington
 - **Security Consultant** @ Synopsys (formerly Cigital)
 
 ### 4. **Featured Research & Projects**
+- Sleeper Skills: The Skill You Approved Is Not the Skill Running Now (Metano Labs)
+- The Ghost in the Skills: Unclaimed Dependencies in Agent Skills (Metano Labs)
 - Breaking Payment Gateways: A Deep Dive
 - Deep Dive: Latest LLM Jailbreak Techniques
 - Cloud Village CTF Challenges @ DEF CON

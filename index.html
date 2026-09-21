@@ -42,7 +42,7 @@
         "@context": "https://schema.org",
         "@type": "Person",
         "name": "Harsh Akshit",
-        "jobTitle": "AI Security Research Engineer",
+        "jobTitle": "AI Security Researcher",
         "description": "Cybersecurity professional specializing in AI Safety, LLM Jailbreaking, and Vulnerability Management",
         "alumniOf": {
             "@type": "CollegeOrUniversity",
@@ -50,8 +50,8 @@
         },
         "worksFor": {
             "@type": "Organization",
-            "name": "Wingback Security",
-            "url": "https://www.wingback.ai"
+            "name": "Metano",
+            "url": "https://metano.ai"
         },
         "url": "https://harshakshit.github.io",
         "image": "https://harshakshit.github.io/Images/IMG_5346.jpeg",
@@ -1409,11 +1409,31 @@
             <div class="experience-grid fade-in">
                 <div class="experience-card">
                     <div class="company-logo">
+                        <img src="logos/metano.png" alt="Metano">
+                    </div>
+                    <div class="experience-content">
+                        <h3>AI Security Researcher</h3>
+                        <div class="meta">Metano · June 2026 - Present</div>
+                        <p>
+                            • Researching attacks against agentic AI systems — malicious and backdoored agent skills,
+                            MCP connectors, and autonomous tool-use workflows — covering prompt injection, sleeper
+                            skills, privilege misuse, and data exfiltration<br>
+                            • Building dynamic analysis behind SkillTracer, detonating agent skills in an instrumented
+                            sandbox across multiple models to compare stated intent against actual runtime behavior,
+                            with findings scored via AIVSS and mapped to the OWASP Agentic Top 10<br>
+                            • Converting research into detection and governance logic for Metano's security control
+                            plane, giving defenders runtime visibility into agent activity that EDR and SIEM miss, and
+                            publishing threat research on emerging agentic attack patterns
+                        </p>
+                    </div>
+                </div>
+                <div class="experience-card">
+                    <div class="company-logo">
                         <img src="logos/wingback.png" alt="Wingback Security">
                     </div>
                     <div class="experience-content">
                         <h3>AI Security Research Engineer</h3>
-                        <div class="meta">Wingback Security, Inc. · June 2026 - Present</div>
+                        <div class="meta">Wingback Security, Inc. · June 2026</div>
                         <p>
                             • Researching emerging attack paths across AI agents, LLM applications, MCP connectors, and
                             autonomous tool-use workflows, including prompt injection, tool abuse, permission misuse,
@@ -1547,6 +1567,20 @@
                 <p>Published work on emerging security threats and vulnerability analysis.</p>
             </div>
             <div class="research-grid fade-in">
+                <div class="research-card">
+                    <h3>Sleeper Skills: The Skill You Approved Is Not the Skill Running Now</h3>
+                    <p>Metano Labs research on the self-update trust gap in AI agent skills — 50+ marketplace skills
+                        with silent auto-update paths, downloaded 28k+ times, where a point-in-time audit score is
+                        carried forward to code nobody reviewed.</p>
+                    <a href="https://metano.ai/post/sleeper-skills" target="_blank">Read more →</a>
+                </div>
+                <div class="research-card">
+                    <h3>The Ghost in the Skills</h3>
+                    <p>Metano Labs research on unclaimed dependencies in public AI agent skills — skills instruct
+                        agents to install packages that were never published, and whoever registers the name first
+                        inherits code execution on every machine told to install it.</p>
+                    <a href="https://metano.ai/post/the-ghost-in-the-skills" target="_blank">Read more →</a>
+                </div>
                 <div class="research-card">
                     <h3>React2Shell Explained</h3>
                     <p>A complete guide to the React2Shell vulnerability (CVE-2025-55182) - the critical 10/10 RCE flaw
