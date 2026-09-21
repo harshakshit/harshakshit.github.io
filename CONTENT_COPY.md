@@ -93,8 +93,8 @@ Metano | June 2026 – Present
 
 #### Body Copy
 ```
-Researching attacks against agentic AI systems—malicious and backdoored agent skills, MCP
-connectors, and autonomous tool-use workflows—covering prompt injection, sleeper skills,
+Researching attacks against agentic AI systems, spanning malicious and backdoored agent skills,
+MCP connectors, and autonomous tool-use workflows, including prompt injection, sleeper skills,
 privilege misuse, and data exfiltration. Building dynamic analysis behind SkillTracer,
 detonating agent skills in an instrumented sandbox across multiple models to compare stated
 intent against actual runtime behavior, with findings scored via AIVSS and mapped to the OWASP
@@ -124,7 +124,7 @@ Wingback Security, Inc. | June 2026
 #### Body Copy
 ```
 Researching emerging attack paths across AI agents, LLM applications, MCP connectors, and
-autonomous tool-use workflows—including prompt injection, tool abuse, permission misuse, and
+autonomous tool-use workflows, including prompt injection, tool abuse, permission misuse, and
 data leakage. Building evaluation pipelines, adversarial test cases, and benchmark datasets,
 and converting research findings into detection logic and product capabilities for the
 Wingback platform.
@@ -152,7 +152,7 @@ Pillar Security Inc. | September 2025 – December 2025
 #### Body Copy
 ```
 Actively researching Large Language Model (LLM) jailbreaks, Prompt Injection techniques, 
-and Model Context Protocol (MCP) vulnerabilities—exploring the cutting edge of AI threat 
+and Model Context Protocol (MCP) vulnerabilities, exploring the cutting edge of AI threat 
 vectors. Translating complex technical findings into accessible content through blog posts, 
 whitepapers, and go-to-market assets that inform both product strategy and industry awareness.
 ```
@@ -303,8 +303,8 @@ The Ghost in the Skills
 ```
 Public AI agent skills instruct agents to install packages that were never published. The names
 sit unregistered on PyPI, npm and RubyGems, allocation is first come first served, and whoever
-claims the name inherits code execution on every machine whose agent was told to install it — a
-supply chain attack nobody had to break in to stage. The same defect appears across unrelated
+claims the name inherits code execution on every machine whose agent was told to install it:
+a supply chain attack nobody had to break in to stage. The same defect appears across unrelated
 skill collections on more than one marketplace.
 ```
 
