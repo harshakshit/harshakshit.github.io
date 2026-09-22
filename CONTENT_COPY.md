@@ -678,6 +678,31 @@ in Google Calendar, contributing to Google's infrastructure security.
 
 #### Icon/Badge
 ```
+🏆 LangChain
+```
+
+#### H4 (Achievement Name)
+```
+LangChain Hall of Fame
+```
+
+#### Year
+```
+2026
+```
+
+#### Description
+```
+Recognized for discovering and responsibly disclosing a security vulnerability 
+in LangChain.
+```
+
+---
+
+### Achievement Badge 3
+
+#### Icon/Badge
+```
 🎯 Amazon
 ```
 

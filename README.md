@@ -137,6 +137,7 @@ Organized into 5 categories:
 - AWS Solutions Architect (Associate)
 - CompTIA Security+
 - Google Bughunter Hall of Fame
+- LangChain Hall of Fame
 - Amazon AppSec CTF Finalist
 - DEF CON Goon (Volunteer)
 - Cloud Village CTF Creator
