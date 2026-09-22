@@ -460,6 +460,94 @@ Google Bughunter Hall of Fame | Responsible Disclosure
 
 ---
 
+### CVEs Subsection
+
+#### H3 (Subsection Header)
+```
+CVEs
+```
+
+#### Intro Copy
+```
+Vulnerabilities I reported that were assigned CVE IDs.
+```
+
+---
+
+### CVE Card 1
+
+#### CVE ID
+```
+CVE-2026-54261
+```
+
+#### Severity Badge
+```
+6.5 Medium
+```
+
+#### H3 (Title)
+```
+Improper permission handling in image preview
+```
+
+#### Body Copy
+```
+A missing permission check on the image preview endpoint let any user with Wagtail admin 
+access preview any image, regardless of their permissions.
+```
+
+#### Meta
+```
+Wagtail CMS · CWE-280 · July 2026
+```
+
+#### CTA Link
+```
+→ View advisory
+```
+
+**URL**: `https://github.com/wagtail/wagtail/security/advisories/GHSA-r6p4-grq7-xm4m`
+
+---
+
+### CVE Card 2
+
+#### CVE ID
+```
+CVE-2026-54259
+```
+
+#### Severity Badge
+```
+4.3 Medium
+```
+
+#### H3 (Title)
+```
+Improper restriction handling on Documents and Images chosen endpoints
+```
+
+#### Body Copy
+```
+The Documents and Images chooser's chosen endpoint listed items the user had no choose 
+permission for, exposing their names, filenames, and URLs.
+```
+
+#### Meta
+```
+Wagtail CMS · CWE-280 · July 2026
+```
+
+#### CTA Link
+```
+→ View advisory
+```
+
+**URL**: `https://github.com/wagtail/wagtail/security/advisories/GHSA-h54r-xq46-qwqm`
+
+---
+
 ## 🛠️ SKILLS SECTION
 
 ### H2 (Section Header)

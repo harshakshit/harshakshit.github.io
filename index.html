@@ -670,6 +670,62 @@
             text-decoration: underline;
         }
 
+        /* CVEs */
+        .subsection-header {
+            text-align: center;
+            margin-top: var(--spacing-xl);
+        }
+
+        .subsection-header h3 {
+            font-size: clamp(24px, 3.5vw, 32px);
+            font-weight: 700;
+            margin-bottom: var(--spacing-xs);
+            letter-spacing: -0.01em;
+        }
+
+        .subsection-header p {
+            font-size: 16px;
+            color: var(--color-secondary);
+        }
+
+        .research-grid.cve-grid {
+            margin-top: var(--spacing-md);
+        }
+
+        .cve-header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: var(--spacing-xs);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .cve-id {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .cve-severity {
+            font-size: 12px;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 999px;
+            white-space: nowrap;
+        }
+
+        .severity-medium {
+            background: #fff4e0;
+            color: #9a5b00;
+        }
+
+        .cve-meta {
+            font-size: 13px;
+            color: var(--color-secondary);
+            margin-bottom: var(--spacing-sm);
+        }
+
         /* Skills - Apple Liquid Glass Enhanced */
         .skills-container {
             position: relative;
@@ -1629,6 +1685,37 @@
                         target="_blank">Read more →</a>
                 </div>
 
+            </div>
+
+            <div class="subsection-header fade-in" id="cves">
+                <h3>CVEs</h3>
+                <p>Vulnerabilities I reported that were assigned CVE IDs.</p>
+            </div>
+            <div class="research-grid cve-grid fade-in">
+                <div class="research-card">
+                    <div class="cve-header">
+                        <span class="cve-id">CVE-2026-54261</span>
+                        <span class="cve-severity severity-medium">6.5 Medium</span>
+                    </div>
+                    <h3>Improper permission handling in image preview</h3>
+                    <p>A missing permission check on the image preview endpoint let any user with Wagtail admin
+                        access preview any image, regardless of their permissions.</p>
+                    <div class="cve-meta">Wagtail CMS · CWE-280 · July 2026</div>
+                    <a href="https://github.com/wagtail/wagtail/security/advisories/GHSA-r6p4-grq7-xm4m"
+                        target="_blank">View advisory →</a>
+                </div>
+                <div class="research-card">
+                    <div class="cve-header">
+                        <span class="cve-id">CVE-2026-54259</span>
+                        <span class="cve-severity severity-medium">4.3 Medium</span>
+                    </div>
+                    <h3>Improper restriction handling on Documents and Images chosen endpoints</h3>
+                    <p>The Documents and Images chooser's chosen endpoint listed items the user had no choose
+                        permission for, exposing their names, filenames, and URLs.</p>
+                    <div class="cve-meta">Wagtail CMS · CWE-280 · July 2026</div>
+                    <a href="https://github.com/wagtail/wagtail/security/advisories/GHSA-h54r-xq46-qwqm"
+                        target="_blank">View advisory →</a>
+                </div>
             </div>
         </div>
     </section>

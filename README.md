@@ -123,6 +123,7 @@ Interactive timeline featuring:
 - Deep Dive: Latest LLM Jailbreak Techniques
 - Cloud Village CTF Challenges @ DEF CON
 - Google Calendar IDOR Vulnerability Discovery
+- CVEs: CVE-2026-54261 and CVE-2026-54259 (Wagtail CMS)
 
 ### 5. **Technical Arsenal (Skills)**
 Organized into 5 categories:
